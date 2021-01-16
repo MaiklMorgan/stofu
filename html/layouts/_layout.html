@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8" />
+  <title>{{ title }}</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <!-- Favicon -->
+  <link rel="shortcut icon" href="http://via.placeholder.com/30x30">
+
+  <!-- Template CSS Files -->
+  <link rel="stylesheet" type="text/css" href="css/main.min.css" />
+
+</head>
+	<body class="double-diagonal dark">
+		<!-- Preloader Starts -->
+		<div class="preloader" id="preloader">
+	    <div class="logopreloader">
+	        <img src="http://via.placeholder.com/159x28" alt="logo">
+	    </div>
+	    <div class="loader" id="loader"></div>
+		</div>
+		<!-- Preloader Ends -->
+		<!-- Page Wrapper Starts -->
+		<div class="wrapper">
+
+			{% include "partials/header.html" %}
+
+			{% block content %}
+			{% endblock %}
+
+			{% include "partials/footer.html" %}
+		</div>
+
+    <script src="js/main.min.js"></script>
+	</body>
+</html>
