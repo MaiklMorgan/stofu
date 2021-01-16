@@ -23,10 +23,24 @@ const gulp = require('gulp'),
 // List of directories
 const paths = {
   js: {
-    jquery:             './assests/js/jquery.js',
-    jqueryui:           './assests/js/jquery-ui.min.js',
-    bootstrap:          './assests/js/bootstrap.min.js',
-    slick:              './assests/js/slick.js',
+    jquery:             './assests/js/jquery-2.2.4.min.js',
+    modernizr:             './assests/js/modernizr.js',
+    easing:             './assests/js/plugins/jquery.easing.1.3.js',
+    bootstrap:          './assests/js/plugins/bootstrap.min.js',
+    bxslider:           './assests/js/plugins/jquery.bxslider.min.js',
+    filterizr:          './assests/js/plugins/jquery.filterizr.js',
+    magnific:           './assests/js/plugins/jquery.magnific-popup.min.js',
+    tools:              './assests/js/plugins/revolution/js/jquery.themepunch.tools.min.js',
+    revolution:         './assests/js/plugins/revolution/js/jquery.themepunch.revolution.min.js',
+    actions:            './assests/js/plugins/revolution/js/extensions/revolution.extension.actions.min.js',
+    carousel:           './assests/js/plugins/revolution/js/extensions/revolution.extension.carousel.min.js',
+    kenburn:            './assests/js/plugins/revolution/js/extensions/revolution.extension.kenburn.min.js',
+    layeranimation:     './assests/js/plugins/revolution/js/extensions/revolution.extension.layeranimation.min.js',
+    migration:          './assests/js/plugins/revolution/js/extensions/revolution.extension.migration.min.js',
+    navigation:         './assests/js/plugins/revolution/js/extensions/revolution.extension.navigation.min.js',
+    parallax:           './assests/js/plugins/revolution/js/extensions/revolution.extension.parallax.min.js',
+    slideanims:         './assests/js/plugins/revolution/js/extensions/revolution.extension.slideanims.min.js',
+    video:              './assests/js/plugins/revolution/js/extensions/revolution.extension.video.min.js',
     main:               './assests/js/main.js'
   },
 };
@@ -56,7 +70,7 @@ gulp.task('sass', function () {
 gulp.task('html', function() {
   gulp.src("./html/pages/**/*.+(html|njk)")
     .pipe(nunjucksRender({
-      path: ['./html/layouts', './html/pages/includes']
+      path: './html/layouts'
     }))
     .pipe(gulp.dest('./site'));
 });
@@ -67,9 +81,15 @@ gulp.task('copy', function(){
   .pipe(gulp.dest('./site/fonts'));
 });
 
+//Copy php
+gulp.task('copy-php', function(){
+  gulp.src('./php/*')
+  .pipe(gulp.dest('./site/php'));
+});
+
 // Compile js to min
 gulp.task('js', function () {
-  return gulp.src([paths.js.jquery, paths.js.jqueryui, paths.js.bootstrap, paths.js.slick, paths.js.main])
+  return gulp.src([paths.js.jquery, paths.js.modernizr, paths.js.easing, paths.js.bootstrap, paths.js.bxslider, paths.js.filterizr, paths.js.magnific, paths.js.tools, paths.js.revolution, paths.js.actions, paths.js.carousel, paths.js.kenburn, paths.js.layeranimation, paths.js.migration, paths.js.navigation, paths.js.parallax, paths.js.slideanims, paths.js.video, paths.js.main])
   .pipe(concat('main.js'))
   .pipe(rename({ suffix: '.min' }))
   .pipe(uglify())
@@ -114,5 +134,5 @@ gulp.task('clean', () => {
 
 // Default task
 gulp.task('default', ['clean'], () => {
-    gulp.run('watch', 'sass', 'html', 'js', 'image', 'copy', 'browser-sync');
+    gulp.run('watch', 'sass', 'html', 'js', 'image', 'copy', 'copy-php', 'browser-sync');
 });
