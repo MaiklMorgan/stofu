@@ -1,0 +1,266 @@
+.navbar{
+  margin-bottom: 0;
+	border: none;
+
+	.navbar-brand{
+		img{
+			flex-shrink: 0;
+		}
+
+		@media (max-width: 560px){
+			img{
+				max-width: 100px;
+			}
+		}
+	}
+
+	@media (min-width: $grid-float-breakpoint){
+		border-radius: 0;
+
+		> .container, 
+		> .container-fluid{
+			.navbar-brand{
+				margin-left: 0;
+				padding-left: 0;
+			}
+		}
+	}
+}
+
+.navbar-toggle{
+	margin-right: 0;
+
+	.icon-bar{
+		background: #000;
+	}
+}
+
+.navbar-link{
+	@each $tKey, $list in reverse-list($responsive-trasholds){
+		$min: 				map-get($list, "min");
+		$max: 				map-get($list, "max");
+		$r-string: 			null;
+
+		@if $min and $max{
+			$r-string: "(min-width: #{$min}) and (max-width: #{$max})";
+		}
+		@else if $min and not $max{
+			$r-string: "(min-width: #{$min})";
+		}
+		@else if not $min and $max{
+			$r-string: "(max-width: #{$max})";	
+		}
+
+		@if $r-string{
+			@media #{$r-string}{
+				&.visible-#{$tKey}{
+					height: $navbar-height;
+	
+					display: -webkit-box !important;
+				    display:    -moz-box !important;
+				    display:     -ms-flexbox !important;
+				    display: -webkit-flex !important;
+				    display:         flex !important;
+
+				    -webkit-flex-direction: column;
+				       -moz-flex-direction: column;
+				        -ms-flex-direction: column;
+				         -o-flex-direction: column;
+				            flex-direction: column;
+
+				    justify-content: center;
+				}
+			}
+		}
+
+	}
+}
+
+.navbar-nav{
+	display: flex;
+	align-items: center;
+
+	> li{
+			&:nth-child(2){
+				display: inline-flex;
+				margin: 0 14px;
+				padding: 0 16px;
+				&:before{
+					content: "";
+					position: absolute;
+					left: 0;
+					top: 32%;
+					width: 1px;
+					height: 22px;
+					background-color: #fff;
+				}
+				&:after{
+					content: "";
+					position: absolute;
+					right: 0;
+					top: 32%;
+					width: 1px;
+					height: 22px;
+					background-color: #fff;	
+				}
+			}
+
+			a{
+				color: map-get($colors, white);
+				font-size: 16px;
+				line-height: 140%;
+				font-weight: normal;
+				padding: 0px 5px !important;
+
+				> span{
+					border-bottom: 1px solid transparent;
+					@include transition(border-color .4s ease 0s, background-color .4s ease 0s);
+				}
+
+				&:hover,
+				&:focus{
+					background-color: transparent;
+					color: map-get($colors, linkColor);
+				}
+
+				&.link-themed{
+					color: $link-color;
+					
+					> span{
+						@extend .fz-small;
+						border-bottom: none;
+						padding: 5px 5px 1px;
+						display: inline-block;
+					}
+
+					&:hover,
+					&:focus{
+						color: #fff;
+
+						> span{
+							background: map-get($backgrounds, theme);
+						}
+					}
+				}
+			}
+
+		&.active{
+			> a{
+				background-color: transparent;
+				color: map-get($colors, black);
+
+				> span{
+					border-color: map-get($colors, black);
+				}
+
+				&.link-themed{
+					color: #fff;
+
+					> span{
+						background: map-get($backgrounds, theme);
+					}
+				}
+			}
+		}
+	}
+	@media (max-width: $screen-lg-min){
+		> li{
+			> a{
+				span{
+					font-size: 15px;
+				}
+			}
+		}
+	}
+	@media (min-width: $screen-lg-min){
+		> li{
+			> a{
+				@include paddings($navbar-link-gutter);
+
+				&.link-themed{
+					@include paddings(5px);
+				}
+			}
+		}
+	}
+
+	@media (min-width: $grid-float-breakpoint) and (max-width: $screen-md-max){
+		> li{
+			> a{
+				@include paddings(20px);
+			}
+		}
+	}
+
+	@media (min-width: $grid-float-breakpoint){
+		> li{
+			> a{
+				height: $navbar-height;
+				@include vertical-centered-content;
+			}
+		}
+
+		&--condeced{
+			> li{
+				> a{
+					@include paddings($navbar-link-gutter-xsmall);
+				}
+			}
+		}
+	}
+
+	@media (max-width: $grid-float-breakpoint-max){
+		&:not(&--condeced){
+			> li{
+				> a{
+					padding-top: map-get($offsets, medium);
+					padding-bottom: map-get($offsets, medium);
+					background: map-get($backgrounds, ppwhite);
+
+					&:hover,
+					&:focus{
+						background: transparentize(map-get($backgrounds, theme), .7);
+					}
+				}
+
+				&:not(:last-child){
+					margin-bottom: 5px;
+				}
+
+				&.active{
+					> a{
+						background: map-get($backgrounds, theme);
+					}
+				}
+			}
+		}
+
+		&--condeced{
+			> li{
+				display: inline-block;
+			}
+		}
+	}
+
+	@media (min-width: 1199px){
+		float: right;
+	}
+}
+
+.navbar-theme{
+	background: #5292BC;
+}
+
+.navbar { 
+	.navbar-brand { 
+		display: flex;
+    flex-direction: column;
+    justify-content: center;
+		padding: 0;
+		font-style: normal;
+		font-weight: normal;
+		font-size: 12px;
+		line-height: 140%;
+		color: #FFFFFF;
+	}
+}

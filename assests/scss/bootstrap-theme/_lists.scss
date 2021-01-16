@@ -1,0 +1,14 @@
+.list-inline{
+	margin-bottom: 0;
+	@include list-inline-gutters(10px);
+
+	@each $key, $value in $offsets{
+		&--#{$key}{
+			@include list-inline-gutters($value);
+		}
+	}
+}
+
+.list-unstyled{
+	margin-bottom: 0;	
+}

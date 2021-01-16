@@ -1,0 +1,26 @@
+.panel-stripped{
+	border-radius: 0;
+	margin: 0;
+	border: none;
+	background: transparent;
+	@include box-shadow(none);
+
+	.panel-group &{
+		border-radius: 0;
+	}
+}
+
+.collapse{
+	@each $tKey, $list in reverse-list($responsive-trasholds){
+		$max: map-get($list, 'max');
+
+		@if $max {
+			@media (min-width: #{$max + 1}){
+				&--#{$tKey}{
+					display: block;
+					height: auto !important;
+				}
+			}
+		}
+	}
+}

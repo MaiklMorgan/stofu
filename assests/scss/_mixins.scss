@@ -1,0 +1,275 @@
+@mixin display-flex{
+    display: -webkit-box;
+    display:    -moz-box;
+    display:     -ms-flexbox;
+    display: -webkit-flex;
+    display:         flex;
+}
+
+@mixin flex-direction($direction){
+    -webkit-flex-direction: $direction;
+       -moz-flex-direction: $direction;
+        -ms-flex-direction: $direction;
+         -o-flex-direction: $direction;
+            flex-direction: $direction;
+}
+
+@mixin align-items($align){
+    -ms-align-items: $align;
+        align-items: $align;
+}
+
+@mixin  order($order){
+    -webkit-order: $order;
+            order: $order;
+}
+
+@mixin vertical-centered-content{ 
+    @include display-flex;
+    @include flex-direction(column);
+
+    justify-content: center;
+}
+
+@mixin row-centered-content{
+    @include display-flex;
+    @include flex-direction(row);
+    @include align-items(center);
+
+    justify-content: flex-start;
+}
+
+@mixin full-parent($top: 0, $left: 0, $height: 100%, $width: 100%){
+    position: absolute;
+    top: $top;
+    left: $left;
+    @include size($width, $height);
+}
+
+@mixin filter($filter){
+    -webkit-filter: $filter;
+            filter: $filter;
+}
+
+@mixin background-size($size){
+    -webkit-background-size: $size;
+            background-size: $size;
+}
+
+@mixin transform($tr){
+    -webkit-transform: $tr;
+        -ms-transform: $tr;
+         -o-transform: $tr;
+            transform: $tr;
+}
+
+@mixin paddings($gutter){
+    padding-left:  floor(($gutter / 2));
+    padding-right: ceil(($gutter / 2));
+}
+
+@mixin list-inline-gutters($gutter){
+    @include make-row($gutter);
+
+    > li{
+        @include paddings($gutter);
+    }
+}
+
+@mixin button-variant-plain($color, $background) {
+    color: $color;
+    background-color: $background;
+    border-color: $background;
+
+    &:focus,
+    &.focus {
+        color: $color;
+        background-color: darken($background, 10%);
+            border-color: darken($background, 25%);
+    }
+    &:hover {
+        color: $color;
+        background-color: darken($background, 10%);
+            border-color: darken($background, 10%);
+    }
+    &:active,
+    &.active,
+    .open > &.dropdown-toggle {
+        color: $color;
+        background-color: darken($background, 10%);
+            border-color: darken($background, 10%);
+
+        &:hover,
+        &:focus,
+        &.focus {
+            color: $color;
+            background-color: darken($background, 17%);
+                border-color: darken($background, 17%);
+        }
+    }
+    &:active,
+    &.active,
+    .open > &.dropdown-toggle {
+        background-image: none;
+    }
+    &.disabled,
+    &[disabled],
+    fieldset[disabled] & {
+        &:hover,
+        &:focus,
+        &.focus {
+            background-color: $background;
+                border-color: $background;
+        }
+    }
+
+    .badge {
+        color: $background;
+        background-color: $color;
+    }
+}
+
+@mixin button-variant($color, $border, $color-active: #fff) {
+    color: $color;
+    background-color: transparent;
+    border-color: $border;
+
+    &:focus,
+    &.focus {
+        color: $color;
+        background-color: transparentize($border, .9);
+            border-color: $border;
+    }
+    &:hover {
+        color: $color;
+        background-color: transparentize($border, .9);
+            border-color: $border;
+    }
+    &:active,
+    &.active,
+    .open > &.dropdown-toggle {
+        color: $color-active;
+        background-color: $border;
+            border-color: $border;
+
+        &:hover,
+        &:focus,
+        &.focus {
+            color: $color-active;
+            background-color: $border;
+                border-color: $border;
+        }
+    }
+    &:active,
+    &.active,
+    .open > &.dropdown-toggle {
+        background-image: none;
+    }
+    &.disabled,
+    &[disabled],
+    fieldset[disabled] & {
+        &:hover,
+        &:focus,
+        &.focus {
+            background-color: transparent;
+                border-color: $border;
+        }
+    }
+
+    .badge {
+        color: $border;
+        background-color: $color;
+    }
+}
+
+@mixin button-variant-full($color, $background, $border, $color-hover, $background-hover, $border-hover, $color-active, $background-active, $border-active) {
+    color: $color;
+    background-color: $background;
+    border-color: $border;
+
+    &:focus,
+    &.focus,
+    &:hover {
+        color: $color-hover;
+        background-color: $background-hover;
+            border-color: $border-hover;
+    }
+    &:active,
+    &.active,
+    .open > &.dropdown-toggle {
+        color: $color-active;
+        background-color: $background-active;
+            border-color: $border-active;
+
+        &:hover,
+        &:focus,
+        &.focus {
+            color: $color-active;
+            background-color: $background-active;
+                border-color: $border-active;
+        }
+    }
+    &:active,
+    &.active,
+    .open > &.dropdown-toggle {
+        background-image: none;
+    }
+    &.disabled,
+    &[disabled],
+    fieldset[disabled] & {
+        &:hover,
+        &:focus,
+        &.focus {
+            background-color: $background;
+            border-color: $border;
+        }
+    }
+
+    .badge {
+        color: $background;
+        background-color: $color;
+    }
+}
+
+@mixin image-ratio($width, $height, $fixed-width: true){
+    &--#{$width}x#{$height}{
+        @if $fixed-width {
+            width: unquote($width + "px");
+            max-width: 100%;
+        }
+        
+        padding-top: percentage($height / $width);
+    }
+}
+
+@mixin placeholder-styles{
+    &::-moz-placeholder{
+        @content;
+    }
+
+    &:-ms-input-placeholder{
+        @content;
+    }
+
+    &::-webkit-input-placeholder{
+        @content;
+    }
+}
+
+@mixin keyframes($name){
+    @-webkit-keyframes #{$name} {
+        @content;
+    }
+
+    @-moz-keyframes #{$name} {
+        @content;
+    }
+
+    @-o-keyframes #{$name} {
+        @content;
+    }
+    
+    @keyframes #{$name} {
+        @content;
+    }
+}

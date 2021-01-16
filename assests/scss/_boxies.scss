@@ -1,0 +1,105 @@
+.box{
+	$this: 					& !global;
+	$default-offset: 		map-get($offsets, 'default') !global;
+	$default-parts-offset: 	map-get($offsets, 'default') !global;
+	$outer-offset: 			50px !global;
+	$outer-offset-small: 	25px !global;
+
+	&:not(:last-child){
+		margin-bottom: $default-offset;
+	}
+
+	&__part{
+		margin-bottom: $default-parts-offset;
+
+		@each $key, $value in $offsets{
+			&--#{$key}{
+				margin-bottom: $value;
+			}
+		}
+
+		&--last:not([class*="offset-bottom"]),
+		&:last-child:not([class*="offset-bottom"]){
+			margin-bottom: 0 !important;
+		}
+	}
+
+	&__header{
+		#{$titles-selectors},
+		.lead{
+			margin: 0;
+
+			&:not(:last-child){
+				margin-bottom: 0;
+			}
+		}
+	}
+
+	@each $key, $value in $offsets{
+		&--padding-#{$key}{
+			padding: $value;
+
+			&#{$this}--content-outer{
+				#{$this}__part{
+					&--outer{
+						margin-right: -($outer-offset + $value);
+					}
+				}
+			}
+
+			&#{$this}--content-outer-small{
+				#{$this}__part{
+					&--outer{
+						margin-right: -($outer-offset-small + $value);
+					}
+				}
+			}
+		}
+
+		&--offset-#{$key}{
+			&:not(:last-child){
+				margin-bottom: $value;
+			}
+		}
+	}
+
+	@each $key, $value in $backgrounds{
+		&--background-#{$key}{
+			background: $value;
+		}
+	}
+
+	@each $key, $colors in $gradients{
+		&--background-gradient-#{$key}{
+			@include gradient-vertical($start-color: map-get($colors, start), $end-color: map-get($colors, stop));
+		}
+	}
+
+	&--bradius{border-radius: $border-radius-base;}
+	&--bradius-small{border-radius: $border-radius-small;}
+	&--bradius-large{border-radius: $border-radius-large;}
+
+	&--shadow{@include box-shadow(1px 1px 5px 0 transparentize(map-get($boxShadows, blue), .9));}
+
+	&--no-padding-top{padding-top: 0 !important;}
+	&--no-padding-right{padding-right: 0 !important;}
+	&--no-padding-bottom{padding-bottom: 0 !important;}
+	&--no-padding-left{padding-left: 0 !important;}
+
+	&--last:not([class*="offset-bottom"]),
+	&:last-child:not([class*="offset-bottom"]){
+		margin-bottom: 0 !important;
+	}
+
+	&__course-variant{
+		&:not(:first-child){
+			border-top: 0.5px solid #CDCDCD;
+			padding-top: map-get($offsets, xxlarger);
+		}
+	}
+
+	@media (max-width: $screen-xs-max){
+		display: block;
+	}
+}
+

@@ -1,0 +1,148 @@
+.modal-dialog{
+	min-height: 100%;
+	@include vertical-centered-content;
+
+	@media (min-width: $grid-float-breakpoint){
+		margin-top: 0;
+		margin-bottom: 0;
+		padding-top: 30px;
+		padding-bottom: 30px;
+	}
+
+	@media (max-width: $grid-float-breakpoint-max){
+		margin-top: 0;
+		margin-bottom: 0;
+		padding-top: 10px;
+		padding-bottom: 10px;
+	}
+}
+
+.modal-content{
+	border: none;
+	border-radius: 0;
+	@include box-shadow(0 15px 50px 0 transparentize(map-get($boxShadows, grey), .85));
+
+	> .close{
+		position: absolute;
+		z-index: 99;
+		top: map-get($offsets, medium);
+		right: map-get($offsets, medium);
+	}
+}
+
+.modal-header,
+.modal-footer{
+	border: none;
+}
+
+.modal-body{
+	padding: map-get($offsets, xlarge);
+}
+
+.modal-header,
+.modal-footer{
+	color: #fff;
+	background: map-get($backgrounds, dark);
+	padding: map-get($offsets, mediumer) map-get($offsets, xlarge);
+}
+
+.modal-footer{
+	text-align: inherit !important;
+}
+
+@media (max-width: $screen-sm-max){
+	.modal-body,
+	.modal-header,
+	.modal-footer{
+		padding: map-get($offsets, large);
+	}
+}
+
+@media (max-width: $screen-xs-max){
+	.modal-body,
+	.modal-header,
+	.modal-footer{
+		padding: map-get($offsets, medium);
+	}
+}
+
+/* Sizes */
+
+.modal-md{
+	$width: 770px;
+
+	@media (min-width: $width + $grid-gutter-width){
+		width: $width;
+	}
+
+	@media (max-width: $width + $grid-gutter-width - 1){
+		width: auto;
+		margin-right: 15px;
+		margin-left: 15px;
+	}
+}
+
+.modal-md_{
+	$width: 570px;
+
+	@media (min-width: $width + $grid-gutter-width){
+		width: $width;
+	}
+
+	@media (max-width: $width + $grid-gutter-width - 1){
+		width: auto;
+		margin-right: 15px;
+		margin-left: 15px;
+	}
+}
+
+.modal-transparent{
+	.modal-content{
+		background: transparent;
+		@include box-shadow(none);
+
+		.close{
+			position: absolute;
+			top: 20px;
+			right: 20px;
+			z-index: 99;
+
+			@media (max-width: $screen-xs-max){
+				top: 10px;
+				right: 10px;
+			}
+		}
+	}
+
+	[class*="translation-top"]{
+		margin-top: 0;
+		top: auto;
+	}
+}
+
+.modal-full-screen{
+	.modal-dialog{
+		margin: 0;
+		padding: 0;
+		@include square(100%);
+	}
+
+	.modal-content{
+		border: none;
+		border-radius: 0;
+		@include square(100%);
+
+		> .close{
+			position: absolute;
+			z-index: 99;
+			top: map-get($offsets, default);
+			right: map-get($offsets, default);
+		}
+	}
+
+	.map-container{
+		position: relative;
+		z-index: 0;
+		@include square(100%);
+	}
+}

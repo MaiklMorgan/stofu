@@ -1,0 +1,71 @@
+ul.list-plain,
+ul:not([class]){
+	@extend .list-unstyled;
+
+	> li{
+		&:before{
+			content: "\2022";
+			padding-right: .25em;
+		}
+
+		&:not(:last-child){
+			margin-bottom: .625em;
+		}
+	}
+}
+
+.list-offsets{
+	@extend .list-unstyled;
+
+	@each $key, $value in $offsets{
+		&--#{$key}{
+			> li{
+				&:not(:last-child){
+					margin-bottom: $value;
+				}
+			}
+		}
+	}
+
+	&--dotted{
+		> li{
+			&:before{
+				content: "\2022";
+				display: inline-block;
+				font-size: 2em;
+				padding-right: .25em;
+				line-height: .3em;
+				position: relative;
+				top: .111em;
+			}
+		}
+	}
+}
+
+
+.list-checked{
+	@extend .list-unstyled;
+
+	> li{
+		line-height: 1.136em;
+		padding-left: 1.818em;
+		position: relative;
+		min-height: 1.136em;
+
+		&:before{
+			content: "";
+			display: block;
+			position: absolute;
+			top: 50%;
+			left: 0;
+			// background: transparent url('../images/icons/icon-check.svg') 50% 50% no-repeat;
+			@include background-size(contain);
+			@include square(1.136em);
+			@include translate(0, -50%);
+		}
+
+		&:not(:first-child){
+			margin-top: .773em;
+		}
+	}
+}

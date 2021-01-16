@@ -1,0 +1,6 @@
+@for $i from -1 through 10{
+	.z-#{$i}{
+		position: relative;
+		z-index: $i;
+	}
+}

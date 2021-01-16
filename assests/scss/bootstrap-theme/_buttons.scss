@@ -1,0 +1,38 @@
+.btn{
+	@include box-shadow(none);
+	@include transition(all .4s ease 0s);
+	@include button-size(15px, 15px, 16px, 20px, 4px);
+
+	&:hover,
+	&:focus,
+	&:active,
+	&.active,
+    .open > &.dropdown-toggle {
+    	@include box-shadow(none);
+    }
+}
+
+.btn-sm{
+	@include button-size(7px, 25px, 16px, 20px, 4px);
+}
+
+.btn-md{
+	font-weight: 300;
+	@include button-size(11px, 5px, 16px, 20px, 4px);
+}
+
+.btn-lg{
+	@include button-size(15px, 15px, 18px, 22px, 4px);
+}
+
+.btn-violet{
+	@include button-variant-full(#fff, #795484, #795484, #fff, #503558, #503558, #fff, #795484, #795484);
+}
+
+.btn-transparent{
+	@include button-variant-full(#fff, transparent, #fff, #fff, #437494, #fff, #fff, #6d7073, #6d7073);
+}
+
+.btn-transparent-white{
+	@include button-variant(#fff, #fff, #000);
+}

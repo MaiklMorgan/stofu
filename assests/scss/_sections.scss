@@ -1,0 +1,144 @@
+$this: 					".section";
+$default-offset: 		map-get($offsets, 'large');
+$default-parts-offset: 	map-get($offsets, 'large');
+
+.section{
+	&__header{
+		#{$titles-selectors},
+		.lead{
+			margin: 0;
+
+			&:not(:last-child){
+				margin-bottom: .762em;
+			}
+		}
+	}
+
+	@each $key, $value in $offsets{
+		&--padding-top-#{$key}{
+			padding-top: $value;
+
+			#{$this}__pulled-top{
+				margin-top: -$value;
+			}
+
+			#{$this}__full-parent{
+				&--no-top{
+					top: $value;
+				}
+			}
+		}
+
+		&--padding-bottom-#{$key}{
+			padding-bottom: $value;
+
+			#{$this}__pulled-bottom{
+				margin-top: -$value;
+				position: relative;
+				top: $value;
+			}
+
+			#{$this}__full-parent{
+				&--no-bottom{
+					bottom: $value;
+				}
+			}
+		}
+	}
+
+	@each $key, $value in $backgrounds{
+		&--background-#{$key}{
+			background: $value;
+		}
+	}
+
+	.navbar-fixed-top + &{
+		margin-top: $navbar-height;
+	}
+
+	&--background{
+    background-position: top;
+  	position: relative; 
+		&__top{
+			background: url(/image/backgrounds/bg-top.png) scroll 50% 50%/cover no-repeat;
+		}
+	}
+}
+
+@each $tKey, $list in reverse-list($responsive-trasholds){
+	$max: 						map-get($list, 'max');
+	$min-section-offset: 		map-get($list, 'minSectionOffset');
+	$min-section-part-offset: 	map-get($list, 'minSectionPartOffset');
+	$modifier: 					map-get($list, 'modifier');
+
+	@if $max {
+		@media (max-width: $max){
+			@each $key, $value in $offsets{
+				@if $min-section-offset and $modifier{
+					@if $value >= $min-section-offset{
+						$new-offset: ceil($modifier * $value);
+
+						@if $new-offset < $min-section-offset{
+							$new-offset: $min-section-offset;
+						}
+
+						.section{
+							&--padding-top-#{$key}{
+								padding-top: $new-offset;
+
+								#{$this}__pulled-top{
+									margin-top: -$new-offset;
+								}
+
+								#{$this}__full-parent{
+									&--no-top{
+										top: $new-offset;
+									}
+								}
+							}
+
+							&--padding-bottom-#{$key}{
+								padding-bottom: $new-offset;
+
+								#{$this}__pulled-bottom{
+									margin-top: -$new-offset;
+									position: relative;
+									top: $new-offset;
+								}
+
+								#{$this}__full-parent{
+									&--no-bottom{
+										bottom: $new-offset;
+									}
+								}
+							}
+						}
+					}
+				}
+
+				@if $min-section-part-offset and $modifier{
+					@if $value >= $min-section-part-offset{
+						$new-offset: ceil($modifier * $value);
+
+						@if $new-offset < $min-section-part-offset{
+							$new-offset: $min-section-part-offset;
+						}
+						
+						.section{
+							&__part{
+								&--#{$key}{
+									margin-bottom: $new-offset !important;
+								}
+
+								&--last,
+								&:last-child{
+									margin-bottom: 0 !important;
+								}
+							}
+						}
+					}
+				}
+			}
+		}
+	}
+}

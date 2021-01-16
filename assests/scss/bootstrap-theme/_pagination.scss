@@ -1,0 +1,61 @@
+.pagination{
+	$size: 44px;
+
+	margin: 0;
+
+	> li{
+		> a,
+		> span{
+			min-width: $size;
+			min-height: $size;
+			line-height: 1.023 * $size;
+			text-align: center;
+			height: $size;
+			padding-top: 0;
+			padding-bottom: 0;
+		}
+
+		&:first-child,
+		&:last-child{
+			> a,
+			> span{
+				position: relative;
+
+				&:before{
+					content: "";
+					display: block;
+					border-top: 2px solid;
+					border-right: 2px solid;
+					position: absolute;
+					top: 50%;
+					left: 50%;
+					@include square(catet(ceil(.3634 * $size)));
+				}
+			}
+		}
+
+		&:first-child{
+			> a,
+			> span{
+				&:before{
+					@include transform(translate(-40%, -50%) rotate(-135deg));
+				}
+			}
+		}
+
+		&:last-child{
+			> a,
+			> span{
+				&:before{
+					@include transform(translate(-60%, -50%) rotate(45deg));
+				}
+			}
+		}
+
+		@media (max-width: 560px){
+			&:not(:first-child):not(:last-child):not(.active){
+				display: none;
+			}
+		}
+	}
+}

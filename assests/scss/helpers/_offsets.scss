@@ -1,0 +1,103 @@
+$trasholds: reverse-list($responsive-trasholds);
+
+@each $key, $value in $offsets{
+	.pulled-top--#{$key}{
+		margin-top: -($value);
+	}
+
+	.pulled-right--#{$key}{
+		margin-right: -($value);
+	}
+
+	.pulled-bottom--#{$key}{
+		margin-bottom: -($value);
+	}
+
+	.pulled-left--#{$key}{
+		margin-left: -($value);
+	}
+
+	.offset-top--#{$key}{
+		margin-top: $value;
+	}
+
+	.offset-right--#{$key}{
+		margin-right: $value;
+	}
+
+	.offset-bottom--#{$key}{
+		margin-bottom: $value;
+	}
+
+	.offset-left--#{$key}{
+		margin-left: $value;
+	}
+
+	.offset-p-right--#{$key}{
+		padding-right: $value;
+	}
+
+	.offset-p-left--#{$key}{
+		padding-left: $value;
+	}
+
+	.translation-top--#{$key}{
+		margin-top: -(2 * $value);
+		position: relative;
+		top: $value;
+	}
+}
+
+@each $tKey, $list in $trasholds{
+	$max: map-get($list, 'max');
+
+	@if $max {
+		@media (max-width: $max){
+			@each $key, $value in $offsets{
+				.pulled-top--#{$tKey}-#{$key}{
+					margin-top: -($value);
+				}
+
+				.pulled-right--#{$tKey}-#{$key}{
+					margin-right: -($value);
+				}
+
+				.pulled-bottom--#{$tKey}-#{$key}{
+					margin-bottom: -($value);
+				}
+
+				.pulled-left--#{$tKey}-#{$key}{
+					margin-left: -($value);
+				}
+
+				.offset-top--#{$tKey}-#{$key}{
+					margin-top: $value;
+				}
+
+				.offset-right--#{$tKey}-#{$key}{
+					margin-right: $value;
+				}
+
+				.offset-bottom--#{$tKey}-#{$key}{
+					margin-bottom: $value;
+				}
+
+				.offset-left--#{$tKey}-#{$key}{
+					margin-left: $value;
+				}
+				.offset-p-right--#{$tKey}-#{$key}{
+					padding-right: $value;		
+				}
+				.offset-p-left--#{$tKey}-#{$key}{
+					padding-left: $value;		
+				}
+
+				.translation-top--#{$tKey}-#{$key}{
+					margin-top: -(2 * $value);
+					position: relative;
+					top: $value;
+				}
+			}
+		}
+	}
+}

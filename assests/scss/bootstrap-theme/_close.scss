@@ -1,0 +1,50 @@
+.close,
+button.close{
+	position: relative;
+	@include square(20px);
+	@include opacity(1);
+
+	&:before,
+	&:after{
+		content: "";
+		display: block;
+		position: absolute;
+		border-radius: 2px;
+		top: 50%;
+		left: 50%;
+		background: #030303;
+		margin-top: -1px;
+		@include size(gepatenuza(20px), 2px);
+	}
+
+	&:before{
+		@include transform(translate(-50%, 0) rotate(45deg));
+	}
+
+	&:after{
+		@include transform(translate(-50%, 0) rotate(-45deg));
+	}
+
+	&:hover,
+	&:focus{
+		@include opacity(1);
+	}
+
+	&--circle{
+		text-align: center;
+		line-height: 33px;
+		font-size: 18px;
+		background: #fff;
+		border: 1px solid map-get($backgrounds, theme);
+		color: map-get($backgrounds, theme);
+		text-shadow: none;
+		border-radius: 50%;
+		@include square(33px);
+		@include opacity(1);
+
+		&:before,
+		&:after{
+			display: none;
+		}
+	}
+}

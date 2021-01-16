@@ -1,0 +1,49 @@
+@function reverse-list($list, $recursive: false) {
+  	$result: ();
+
+  	@for $i from length($list) *-1 through -1 {
+    	@if type-of(nth($list, abs($i))) == list and $recursive {
+      		$result: append($result, reverse(nth($list, abs($i)), $recursive));
+    	}
+    	@else {
+      		$result: append($result, nth($list, abs($i)));
+    	}
+  	}
+
+  	@return $result;
+}
+
+@function sqrt($r) {
+    $x0: 1;
+    $x1: $x0;
+ 
+    @for $i from 1 through 10 {
+        $x1: $x0 - ($x0 * $x0 - abs($r)) / (2 * $x0);
+        $x0: $x1;
+    }
+ 
+    @return $x1;
+}
+
+@function strip-units($number) {
+    @return $number / ($number * 0 + 1);
+}
+
+@function catet($gepatenuza){
+    @return unquote(sqrt((strip-units($gepatenuza) * strip-units($gepatenuza)) / 2) + "px");
+}
+
+@function gepatenuza($catet){
+    @return unquote(sqrt(2 * (strip-units($catet) * strip-units($catet))) + "px");
+}
+
+@function transition-string($property: 'all', $duration: $transition-duration, $easing: $transition-easing, $delay: $transition-delay){
+    @return unquote('#{$property} #{$duration} #{$easing} #{$delay}');
+}
+
+@function map-deep-get($map, $keys...) {
+    @each $key in $keys {
+        $map: map-get($map, $key);
+    }
+    @return $map;
+}
