@@ -6966,8 +6966,10 @@ body.normal .portfolio .container   {
 
 // ======================================================================
 
-.footer .top-footer .title-logo h4{
-  text-transform: none;
+.footer{
+  .title-logo h4{
+    text-transform: none;
+  }
 }
 
 .footer .top-footer .title-none{
@@ -6998,11 +7000,12 @@ body.normal .portfolio .container   {
   margin-top: 20px;
 }
 
-.form-group .custom-form-group{
-  width: 100%;
-  padding-right: 0px;
-  padding-left: 0px;
-  
+.form-group{ 
+  .custom-form-group{
+    width: 100%;
+    padding-right: 0px;
+    padding-left: 0px;
+  }
 }
 
 .custom-button {
@@ -7010,11 +7013,8 @@ body.normal .portfolio .container   {
   padding: 15px 20px;
   margin-top: 20px;
   margin: 0 15px;
-
   background: #72b626;
 }
-
-
 
 .input .custom-input{
   // width: 200px;
