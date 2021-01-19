@@ -5206,6 +5206,7 @@ body.dark.blog-page .banner-blog-post .meta {
 body.error-page .error {
   height: 100vh;
   background-image: url('http://via.placeholder.com/1920x1080');
+  // background-image: url('../assests/img/backgrounds/Cybersecurity-groeiboek-2019-achtergrond.jpg');
   background-size: cover;
   background-position: center center;
   padding: 0;
@@ -7022,3 +7023,7 @@ body.normal .portfolio .container   {
 
 @import "404";
 @import "503";
+
+.logopreloader img{
+  max-width: 159px;
+}

@@ -23,25 +23,25 @@ const gulp = require('gulp'),
 // List of directories
 const paths = {
   js: {
-    jquery:             './assests/js/jquery-2.2.4.min.js',
-    modernizr:             './assests/js/modernizr.js',
-    easing:             './assests/js/plugins/jquery.easing.1.3.js',
-    bootstrap:          './assests/js/plugins/bootstrap.min.js',
-    bxslider:           './assests/js/plugins/jquery.bxslider.min.js',
-    filterizr:          './assests/js/plugins/jquery.filterizr.js',
-    magnific:           './assests/js/plugins/jquery.magnific-popup.min.js',
-    tools:              './assests/js/plugins/revolution/js/jquery.themepunch.tools.min.js',
-    revolution:         './assests/js/plugins/revolution/js/jquery.themepunch.revolution.min.js',
-    actions:            './assests/js/plugins/revolution/js/extensions/revolution.extension.actions.min.js',
-    carousel:           './assests/js/plugins/revolution/js/extensions/revolution.extension.carousel.min.js',
-    kenburn:            './assests/js/plugins/revolution/js/extensions/revolution.extension.kenburn.min.js',
-    layeranimation:     './assests/js/plugins/revolution/js/extensions/revolution.extension.layeranimation.min.js',
-    migration:          './assests/js/plugins/revolution/js/extensions/revolution.extension.migration.min.js',
-    navigation:         './assests/js/plugins/revolution/js/extensions/revolution.extension.navigation.min.js',
-    parallax:           './assests/js/plugins/revolution/js/extensions/revolution.extension.parallax.min.js',
-    slideanims:         './assests/js/plugins/revolution/js/extensions/revolution.extension.slideanims.min.js',
-    video:              './assests/js/plugins/revolution/js/extensions/revolution.extension.video.min.js',
-    main:               './assests/js/main.js'
+    jquery: './assests/js/jquery-2.2.4.min.js',
+    modernizr: './assests/js/modernizr.js',
+    easing: './assests/js/plugins/jquery.easing.1.3.js',
+    bootstrap: './assests/js/plugins/bootstrap.min.js',
+    bxslider: './assests/js/plugins/jquery.bxslider.min.js',
+    filterizr: './assests/js/plugins/jquery.filterizr.js',
+    magnific: './assests/js/plugins/jquery.magnific-popup.min.js',
+    tools: './assests/js/plugins/revolution/js/jquery.themepunch.tools.min.js',
+    revolution: './assests/js/plugins/revolution/js/jquery.themepunch.revolution.min.js',
+    actions: './assests/js/plugins/revolution/js/extensions/revolution.extension.actions.min.js',
+    carousel: './assests/js/plugins/revolution/js/extensions/revolution.extension.carousel.min.js',
+    kenburn: './assests/js/plugins/revolution/js/extensions/revolution.extension.kenburn.min.js',
+    layeranimation: './assests/js/plugins/revolution/js/extensions/revolution.extension.layeranimation.min.js',
+    migration: './assests/js/plugins/revolution/js/extensions/revolution.extension.migration.min.js',
+    navigation: './assests/js/plugins/revolution/js/extensions/revolution.extension.navigation.min.js',
+    parallax: './assests/js/plugins/revolution/js/extensions/revolution.extension.parallax.min.js',
+    slideanims: './assests/js/plugins/revolution/js/extensions/revolution.extension.slideanims.min.js',
+    video: './assests/js/plugins/revolution/js/extensions/revolution.extension.video.min.js',
+    main: './assests/js/main.js'
   },
 };
 
@@ -57,7 +57,7 @@ gulp.task('sass', function () {
     .pipe(minifycss())
     .pipe(livereload(server))
     .pipe(gulp.dest('./site/css'))
-    .pipe(browserSync.reload({stream:true}));
+    .pipe(browserSync.reload({ stream: true }));
 });
 
 // Compile pug files to html
@@ -67,7 +67,7 @@ gulp.task('sass', function () {
 //     .pipe(gulp.dest('./site'))
 // });
 
-gulp.task('html', function() {
+gulp.task('html', function () {
   gulp.src("./html/pages/**/*.+(html|njk)")
     .pipe(nunjucksRender({
       path: './html/layouts'
@@ -76,43 +76,64 @@ gulp.task('html', function() {
 });
 
 // Copy fonts
-gulp.task('copy', function(){
+gulp.task('copy', function () {
   gulp.src('./assests/fonts/**/*')
-  .pipe(gulp.dest('./site/fonts'));
+    .pipe(gulp.dest('./site/fonts'));
 });
 
 //Copy php
-gulp.task('copy-php', function(){
+gulp.task('copy-php', function () {
   gulp.src('./php/*')
-  .pipe(gulp.dest('./site/php'));
+    .pipe(gulp.dest('./site/php'));
 });
 
 // Compile js to min
 gulp.task('js', function () {
   return gulp.src([paths.js.jquery, paths.js.modernizr, paths.js.easing, paths.js.bootstrap, paths.js.bxslider, paths.js.filterizr, paths.js.magnific, paths.js.tools, paths.js.revolution, paths.js.actions, paths.js.carousel, paths.js.kenburn, paths.js.layeranimation, paths.js.migration, paths.js.navigation, paths.js.parallax, paths.js.slideanims, paths.js.video, paths.js.main])
-  .pipe(concat('main.js'))
-  .pipe(rename({ suffix: '.min' }))
-  .pipe(uglify())
-  .pipe(livereload(server))
-  .pipe(gulp.dest('./site/js'));
+    .pipe(concat('main.js'))
+    .pipe(rename({ suffix: '.min' }))
+    .pipe(uglify())
+    .pipe(livereload(server))
+    .pipe(gulp.dest('./site/js'));
 });
+
+// функция для работы с js файлами
+// function js() {
+//   return src(path.src.js)
+//     .pipe(fileinclude())
+//     .pipe(dest(path.build.js))
+//     .pipe(uglify())
+//     .pipe(
+//       rename({
+//         extname: ".min.js",
+//       })
+//     )
+//     .pipe(dest(path.build.js))
+//     .pipe(browsersync.stream());
+// }
+
+
+
+
+
+
 
 /*
 * Minify all image
 */
 gulp.task('image', () => {
   return gulp.src('./assests/image/**/*.+(png|jpg|gif|svg|jpeg)')
-  .pipe(plumber())
-  .pipe(changed('./site/image'))
-  .pipe(gulp.dest('./site/image'));
+    .pipe(plumber())
+    .pipe(changed('./site/image'))
+    .pipe(gulp.dest('./site/image'));
 });
 
 // the working directory
-gulp.task('browser-sync', ['sass', 'html', 'js'] ,function() {
+gulp.task('browser-sync', ['sass', 'html', 'js'], function () {
   browserSync.init({
-      server: {
-          baseDir: "./site"
-      }
+    server: {
+      baseDir: "./site"
+    }
   });
 });
 
@@ -128,11 +149,11 @@ gulp.task('watch', function () {
 
 // Clean
 gulp.task('clean', () => {
-  return gulp.src(['site/css', 'site/js', 'site/image', 'site/fonts', 'site/index.html'], {read: false})
+  return gulp.src(['site/css', 'site/js', 'site/image', 'site/fonts', 'site/index.html'], { read: false })
     .pipe(clean());
 });
 
 // Default task
 gulp.task('default', ['clean'], () => {
-    gulp.run('watch', 'sass', 'html', 'js', 'image', 'copy', 'copy-php', 'browser-sync');
+  gulp.run('watch', 'sass', 'html', 'js', 'image', 'copy', 'copy-php', 'browser-sync');
 });
