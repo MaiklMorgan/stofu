@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8" />
+  <title>{{ title }}</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <!-- Favicon -->
+  <link rel="shortcut icon" href="http://via.placeholder.com/30x30">
+
+  <!-- Template CSS Files -->
+  <link rel="stylesheet" type="text/css" href="css/main.min.css" />
+
+</head>
+
+<body class="double-diagonal dark error-page">
+  <!-- Preloader Starts -->
+  <div class="preloader" id="preloader">
+    <div class="logopreloader">
+      <img src="../assests/img/projects/logo/SToFU.svg" alt="logo">
+    </div>
+    <div class="loader" id="loader"></div>
+  </div>
+  <!-- Preloader Ends -->
+  <!-- Page Wrapper Starts -->
+  <div class="wrapper">
+    <div class="container-fluid error">
+      <div>
+        <div class="text-center">
+          <!-- Logo Starts -->
+          <a class="logo" href="index-kenburns.html">
+            <img class="img-responsive" src="../assests/img/projects/logo/SToFU.svg" alt="logo">
+          </a>
+          <!-- Logo Ends -->
+
+          {% block content %}
+          {% endblock %}
+
+
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- Wrapper Ends -->
+
+  <!-- Template JS Files -->
+  <script src="js/main.min.js"></script>
+
+</body>
+
+</html>

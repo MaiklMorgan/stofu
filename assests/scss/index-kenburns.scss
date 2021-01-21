@@ -1,0 +1,54 @@
+.services {
+  .services-box-item-content{
+    a {
+      // display: block;
+      display: flex;
+      position: relative;
+      justify-content: flex-end;
+      margin: 8px 0;
+      font-size: 14px;
+      // font-size: 16px;
+      font-weight: 500;
+      text-transform: Capitalize;
+    }
+    a:hover {
+      color: #fff;
+    }
+  }
+}
+
+.latest-post{
+  a.img-thumb{
+    img.img-responsive{
+      height: auto;
+      width: 100%;
+      max-width: 720px;
+    }
+  }
+  .post-title{
+  //  margin: auto;   
+  }
+  .custom-button {
+    margin-left: 0;
+  }
+}
+
+.custom-input{
+  border-radius: 2px;
+}
+
+.custom-form-group{
+  border-radius: 2px;
+}
+
+.submit-form{
+  border-radius: 2px;
+}
+
+.tp-simpleresponsive .slider-button{
+  border-radius: 2px;
+}
+
+.latest-post .custom-button{
+  border-radius: 2px;
+}

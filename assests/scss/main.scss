@@ -1,7 +1,8 @@
 @import "bootstrap.scss";
 @import "font-awesome";
 @import "magnific-popup";
-@import "skins/yellow";
+// @import "skins/yellow";
+@import "skins/green";
 @import "settings";
 @import "layers";
 @import "navigation";
@@ -2102,7 +2103,8 @@ body.dark .header.header-fixed .logo a img.logo-dark {
 }
 
 .custom-button:before {
-  content: "\f1d8";
+  // content: "\f1d8";
+  content: "\f003";
   font: 15px/1.2em FontAwesome;
   color: #fff;
   position: absolute;
@@ -5204,6 +5206,7 @@ body.dark.blog-page .banner-blog-post .meta {
 body.error-page .error {
   height: 100vh;
   background-image: url('http://via.placeholder.com/1920x1080');
+  // background-image: url(../../assests/img/backgrounds/Cybersecurity-groeiboek-2019-achtergrond.jpg);
   background-size: cover;
   background-position: center center;
   padding: 0;
@@ -6139,17 +6142,25 @@ h4.panel-title a.collapsed:before {
 
 /*** Copyright Bar ***/
 
-.footer .bottom-footer p {
+// .footer .bottom-footer p {
+//   margin: 0;
+//   font-size: 13px;
+//   border-top: 1px solid #222;
+//   padding: 17px 0;
+//   color: #ddd;
+// }
+
+.footer .row p {
   margin: 0;
   font-size: 13px;
   border-top: 1px solid #222;
-  padding: 17px 0;
+  padding: 17px 0 0;
   color: #ddd;
 }
 
-.footer .bottom-footer p a:hover {
-  color: #fff;
-}
+// .footer .bottom-footer p a:hover {
+//   color: #fff;
+// }
 
 .footer hr {
   background-color: #1d1d1d;
@@ -6953,3 +6964,76 @@ body.normal .portfolio .container   {
 .dark .white-l {
   display: block;
 }
+
+// ======================================================================
+
+.footer{
+  .title-logo h4{
+    text-transform: none;
+  }
+}
+
+.footer .top-footer .title-none{
+  margin-top: 50px;
+}
+
+.footer-form {
+  max-width: 320px;
+}
+
+.social-icons{  
+  padding: 0 15px 20px;
+}
+
+.social{
+  display: flex;
+  width: 100%;
+  justify-content: space-around;
+}
+
+.footer .social-icons ul li:last-child {
+  margin: 0;
+}
+
+.form-inputs{
+  display: inline;
+  width: 320px;
+  margin-top: 20px;
+}
+
+.form-group{ 
+  .custom-form-group{
+    width: 100%;
+    padding-right: 0px;
+    padding-left: 0px;
+  }
+}
+
+.custom-button {
+  width: 260px;
+  padding: 15px 20px;
+  margin-top: 20px;
+  margin: 0 15px;
+  background: #72b626;
+  border-radius: 2px;
+}
+
+.custom-input{
+  border-radius: 2px;
+}
+
+.logopreloader{
+  img{
+  max-width: 159px;
+  }
+} 
+
+@import "404";
+@import "503";
+@import "about";
+@import "contact";
+@import"index-kenburns";
+@import "faq";
+@import "terms-of-services";
+@import "blog-right-sidebar";
+@import "blog-post";
