@@ -7015,10 +7015,11 @@ body.normal .portfolio .container   {
   margin-top: 20px;
   margin: 0 15px;
   background: #72b626;
+  border-radius: 2px;
 }
 
-.input .custom-input{
-  // width: 200px;
+.custom-input{
+  border-radius: 2px;
 }
 
 .logopreloader{
@@ -7029,6 +7030,7 @@ body.normal .portfolio .container   {
 
 @import "404";
 @import "503";
+@import "about";
 @import "contact";
 @import"index-kenburns";
 @import "faq";
