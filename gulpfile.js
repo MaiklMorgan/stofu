@@ -87,6 +87,12 @@ gulp.task('copy-php', function () {
     .pipe(gulp.dest('./site/php'));
 });
 
+//Copy favicons
+gulp.task('copy-favicons', function () {
+  gulp.src('./assests/favicons/*')
+    .pipe(gulp.dest('./site/favicons'));
+});
+
 // Compile js to min
 gulp.task('js', function () {
   return gulp.src([paths.js.jquery, paths.js.modernizr, paths.js.easing, paths.js.bootstrap, paths.js.bxslider, paths.js.filterizr, paths.js.magnific, paths.js.tools, paths.js.revolution, paths.js.actions, paths.js.carousel, paths.js.kenburn, paths.js.layeranimation, paths.js.migration, paths.js.navigation, paths.js.parallax, paths.js.slideanims, paths.js.video, paths.js.main])
@@ -97,35 +103,14 @@ gulp.task('js', function () {
     .pipe(gulp.dest('./site/js'));
 });
 
-// функция для работы с js файлами
-// function js() {
-//   return src(path.src.js)
-//     .pipe(fileinclude())
-//     .pipe(dest(path.build.js))
-//     .pipe(uglify())
-//     .pipe(
-//       rename({
-//         extname: ".min.js",
-//       })
-//     )
-//     .pipe(dest(path.build.js))
-//     .pipe(browsersync.stream());
-// }
-
-
-
-
-
-
-
 /*
 * Minify all image
 */
 gulp.task('image', () => {
-  return gulp.src('./assests/image/**/*.+(png|jpg|gif|svg|jpeg)')
+  return gulp.src('./assests/img/**/*.+(png|jpg|gif|svg|jpeg)')
     .pipe(plumber())
-    .pipe(changed('./site/image'))
-    .pipe(gulp.dest('./site/image'));
+    .pipe(changed('./site/img'))
+    .pipe(gulp.dest('./site/img'));
 });
 
 // the working directory
@@ -139,21 +124,20 @@ gulp.task('browser-sync', ['sass', 'html', 'js'], function () {
 
 // Watch files comiling
 gulp.task('watch', function () {
-  gulp.watch('./assests/scss/*.scss', ['sass']);
+  gulp.watch('./assests/scss/**/*.scss', ['sass']);
   gulp.watch('./html/**/*.html', ['html']);
   gulp.watch('./site/*.html').on('change', reload);
   gulp.watch('./assests/js/*.js', ['js']);
   gulp.watch('./site/js/*.js').on('change', reload)
 });
 
-
 // Clean
 gulp.task('clean', () => {
-  return gulp.src(['site/css', 'site/js', 'site/image', 'site/fonts', 'site/index.html'], { read: false })
+  return gulp.src(['site/css', 'site/js', 'site/img', 'site/fonts', 'site/index.html'], { read: false })
     .pipe(clean());
 });
 
 // Default task
 gulp.task('default', ['clean'], () => {
-  gulp.run('watch', 'sass', 'html', 'js', 'image', 'copy', 'copy-php', 'browser-sync');
+  gulp.run('watch', 'sass', 'html', 'js', 'image', 'copy', 'copy-php', 'copy-favicons', 'browser-sync');
 });
