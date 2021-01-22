@@ -1,40 +1,47 @@
 <!DOCTYPE html>
 <html lang="en">
+	<head>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<meta content="IE=edge" http-equiv="X-UA-Compatible">
+		<meta name="description">
+	  <meta name="keywords">
+	  <meta name="format-detection" content="telephone=no">
+	  <meta name="format-detection" content="address=no">
+	  <meta name="robots" content="noodp, noydir">
+		<title>{{ title }}</title>
+		<link rel="apple-touch-icon" sizes="180x180" href="/favicons/apple-touch-icon.png">
+		<link rel="icon" type="image/png" sizes="32x32" href="/favicons/favicon-32x32.png">
+		<link rel="icon" type="image/png" sizes="16x16" href="/favicons/favicon-16x16.png">
+		<link rel="manifest" href="/favicons/site.webmanifest">
+		<link href="/favicons/favicon.ico" rel="shortcut icon">
+		<meta name="msapplication-TileColor" content="#da532c">
+		<meta name="theme-color" content="#ffffff">
 
-<head>
-	<meta charset="utf-8" />
-	<title>{{ title }}</title>
-	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-
-	<!-- Favicon -->
-	<link rel="shortcut icon" href="http://via.placeholder.com/30x30">
-
-	<!-- Template CSS Files -->
-	<link rel="stylesheet" type="text/css" href="css/main.min.css" />
-
-</head>
-
-<body class="double-diagonal dark">
-	<!-- Preloader Starts -->
-	<div class="preloader" id="preloader">
-		<div class="logopreloader">
-			<img src="../assests/img/projects/logo/SToFU.svg" alt="logo">
+		<!-- Template CSS Files -->
+		<link rel="stylesheet" type="text/css" href="css/main.min.css" />
+	</head>
+	<body class="double-diagonal dark">
+		<!-- Preloader Starts -->
+		<div class="preloader" id="preloader">
+			<div class="logopreloader">
+				<img src="../img/projects/logo/SToFU.svg" alt="logo">
+			</div>
+			<div class="loader" id="loader"></div>
 		</div>
-		<div class="loader" id="loader"></div>
-	</div>
-	<!-- Preloader Ends -->
-	<!-- Page Wrapper Starts -->
-	<div class="wrapper">
+		<!-- Preloader Ends -->
+		<!-- Page Wrapper Starts -->
+		<div class="wrapper">
 
-		{% include "partials/header.html" %}
+			{% include "partials/header.html" %}
 
-		{% block content %}
-		{% endblock %}
+			{% block content %}
+			{% endblock %}
 
-		{% include "partials/footer.html" %}
-	</div>
+			{% include "partials/footer.html" %}
+		</div>
 
-	<script src="js/main.min.js"></script>
-</body>
-
+		<!-- Template JS Files -->
+		<script src="js/main.min.js"></script>
+	</body>
 </html>

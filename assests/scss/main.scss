@@ -2681,7 +2681,7 @@ body.dark .header.header-fixed .logo a img.logo-dark {
 ---------------------------------------- */
 
 .testimonials {
-  background: url("http://via.placeholder.com/1600x650");
+  background: url("./../img/backgrounds/bk/home_heppy_customers.jpg");
   background-attachment: fixed;
   background-position: center;
   background-repeat: no-repeat;
@@ -3311,7 +3311,7 @@ body.dark .header.header-fixed .logo a img.logo-dark {
   list-style-type: none;
   color: #fff;
   text-align: left;
-  max-width: 260px;
+  max-width: 230px;
   margin: 0 auto;
 }
 
@@ -3335,7 +3335,7 @@ body.dark .header.header-fixed .logo a img.logo-dark {
   font-weight: 600;
   display: block;
   text-align: center;
-  width: 260px;
+  width: 230px;
   margin: 0 auto;
   margin-top: 40px;
 }
@@ -4777,7 +4777,7 @@ body.blog-page article .comments-form .custom-button:before {
 
 .contactform {
   color: #fff;
-  background: url("http://via.placeholder.com/1600x650");
+  background: url("./../img/backgrounds/bk/send_email.jpg"); 
   background-attachment: fixed;
   background-position: center;
   background-repeat: no-repeat;
@@ -7010,23 +7010,46 @@ body.normal .portfolio .container   {
 }
 
 .custom-button {
-  width: 260px;
-  padding: 15px 20px;
+  padding: 12px 33px;
   margin-top: 20px;
   margin: 0 15px;
   background: #72b626;
-  border-radius: 2px;
-}
-
-.custom-input{
-  border-radius: 2px;
 }
 
 .logopreloader{
   img{
   max-width: 159px;
   }
-} 
+}
+
+@media only screen and (max-width: 960px) {
+  .tp-mask-wrap .NotGeneric-Title{
+    font-size: 32px !important;
+  } 
+  .tp-mask-wrap .NotGeneric-SubTitle{
+    width: 80vw !important;
+    padding-top: 24px !important;
+    white-space: inherit !important;
+    text-align: center !important;
+  } 
+}
+
+@media only screen and (max-width: 480px) {
+  .tp-mask-wrap .tp-caption{
+    font-size: 24px !important;
+  }  
+  .tp-mask-wrap .NotGeneric-SubTitle{
+    font-size: 14px !important;
+  } 
+}
+@media only screen and (max-width: 320px) {
+  .tp-mask-wrap .tp-caption{
+    font-size: 18px !important;
+  } 
+  .tp-mask-wrap .NotGeneric-SubTitle{
+    font-size: 12px !important;
+  } 
+}
 
 @import "404";
 @import "503";
