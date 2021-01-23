@@ -1,0 +1,67 @@
+{% set title = 'some-project' %}
+{% extends '_layout.html' %}
+
+{% block content %}
+<!-- Banner Starts -->
+<section class="banner">
+  <div class="content text-center">
+    <div class="text-center top-text">
+      <!-- Main Heading Starts -->
+      <div class="text-center top-text">
+        <h1>Some Project</h1>
+      </div>
+      <!-- Main Heading Ends -->
+      <hr>
+      <!-- Breadcrumb Starts -->
+      <ul class="breadcrumb">
+        <li><a href="index-kenburns.html"> home</a></li>
+        <li><a href="#"> projects</a></li>
+        <li>Some Project</li>
+      </ul>
+      <!-- Breadcrumb Ends -->
+    </div>
+  </div>
+</section>
+<!-- Banner Ends -->
+<!-- Project Starts -->
+<section class="project">
+  <div class="container">
+    <div class="row">
+      <!-- Project Main Content Starts -->
+      <div class="col-md-6">
+        <div class="project-main-content">
+          <div><img src="http://via.placeholder.com/700x470" alt="Some Project"></div>
+        </div>
+        <div class="project-navigation">
+          <nav>
+            <ul class="unstyled">
+              <li><a href="image-project.html"><i class="fa fa-angle-double-left"></i> Previous Project</a></li>
+              <li class="pull-right"><a href="gallery-project.html">Next Project <i
+                    class="fa fa-angle-double-right"></i></a></li>
+            </ul>
+          </nav>
+        </div>
+      </div>
+      <!-- Project Main Content Ends -->
+      <!-- Project Details Starts -->
+      <div class="col-md-6">
+        <div class="project-details">
+          <h3>SOME PROJECT</h3>
+          <ul class="unstyled">
+            <li><span class="detail-name"> Some text </span></li>
+            <li><span class="detail-name"> Date </span>: <span class="detail-value">10/10/2020</span></li>
+            <li><span class="detail-name"> Some text </span></li>
+          </ul>
+          <hr>
+          <p>Occupy american apparel freegan cliche. Mustache trust fund 8-bit jean shorts mumblecore thundercats.
+            Pour-over small batch forage cray, banjo post-ironic flannel keffiyeh cred ethnic semiotics next level
+            tousled fashion axe. Sustainable cardigan keytar fap bushwick bespoke.</p>
+          <a class="custom-button" href="#">SOME BUTTON</a>
+        </div>
+      </div>
+      <!-- Project Details Ends -->
+    </div>
+  </div>
+</section>
+<!-- Project Ends -->
+{% endblock %}
