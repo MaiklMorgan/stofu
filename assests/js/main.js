@@ -1,8 +1,8 @@
-(function($) {
+(function ($) {
 
     "use strict";
 
-    $(window).on("load", function() {
+    $(window).on("load", function () {
 
         /* ----------------------------------------------------------- */
         /* PRELOADER
@@ -10,7 +10,7 @@
 
         var d = new Date();
         var n = d.getTime();;
-        (function($, window, document, undefined) {
+        (function ($, window, document, undefined) {
             var s = document.body || document.documentElement,
                 s = s.style,
                 prefixTransition = "";
@@ -20,7 +20,7 @@
             if (s.OTransition === "") prefixTransition = "-o-";
 
             $.fn.extend({
-                onCSSTransitionEnd: function(callback) {
+                onCSSTransitionEnd: function (callback) {
                     var $this = $(this).eq(0);
                     $this.one("webkitTransitionEnd mozTransitionEnd oTransitionEnd otransitionend transitionend", callback);
                     if ((prefixTransition == "" && !("transition" in s)) || $this.css(prefixTransition + "transition-duration") == "0s") {
@@ -43,7 +43,7 @@
             });
         })(jQuery, window, document);
         $("#preloader").addClass("loading");
-        $("#preloader #loader").onCSSTransitionEnd(function() {
+        $("#preloader #loader").onCSSTransitionEnd(function () {
             $("#preloader").addClass("ended");
         });
 
@@ -51,7 +51,7 @@
         /*  FILTERABLE PORTFOLIO
         /* ----------------------------------------------------------- */
 
-        $(".simplefilter li").on("click", function() {
+        $(".simplefilter li").on("click", function () {
             $(".simplefilter li").removeClass("active");
             $(this).addClass("active");
         });
@@ -59,8 +59,8 @@
             animationDuration: 0.6,
             filter: "all",
             callbacks: {
-                onFilteringStart: function() {},
-                onFilteringEnd: function() {}
+                onFilteringStart: function () { },
+                onFilteringEnd: function () { }
             },
             delay: 0,
             delayMode: "alternate",
@@ -77,13 +77,13 @@
 
     });
 
-    $(document).ready(function() {
+    $(document).ready(function () {
 
         /* ----------------------------------------------------------- */
         /*  REMOVE # FROM URL
         /* ----------------------------------------------------------- */
 
-        $("a[href='#']").on("click", (function(e) {
+        $("a[href='#']").on("click", (function (e) {
             e.preventDefault();
         }));
 
@@ -131,9 +131,9 @@
         /* ----------------------------------------------------------- */
 
         var ct = $("#carousel-testimonials");
-        ct.on("touchstart", function(event) {
+        ct.on("touchstart", function (event) {
             var xClick = event.originalEvent.touches[0].pageX;
-            $(this).one("touchmove", function(event) {
+            $(this).one("touchmove", function (event) {
                 var xMove = event.originalEvent.touches[0].pageX;
                 if (Math.floor(xClick - xMove) > 5) {
                     ct.carousel("next");
@@ -141,7 +141,7 @@
                     ct.carousel("prev");
                 }
             });
-            ct.on("touchend", function() {
+            ct.on("touchend", function () {
                 $(this).off("touchmove");
             });
         });
@@ -150,7 +150,7 @@
         /*  INITIALIZING MAGNIFIC POPUP
         /* ----------------------------------------------------------- */
 
-        jQuery(".magnific-popup-gallery").parent().each(function() {
+        jQuery(".magnific-popup-gallery").parent().each(function () {
             magnific_popup_init(jQuery(this))
         });
         var youtubevideo = $('.mfp-youtube');
@@ -196,7 +196,7 @@
                 mainClass: "mfp-zoom-in",
                 fixedContentPos: false,
                 callbacks: {
-                    beforeOpen: function() {
+                    beforeOpen: function () {
                         // just a hack that adds mfp-anim class to markup 
                         this.st.image.markup = this.st.image.markup.replace("mfp-figure", "mfp-figure mfp-with-anim");
                     }
@@ -211,7 +211,7 @@
         /*  BACK TO TOP
         /* ----------------------------------------------------------- */
 
-        $("#back-top a").on("click", function() {
+        $("#back-top a").on("click", function () {
             $("body,html").stop(false, false).animate({
                 scrollTop: 0
             }, 800);
@@ -232,9 +232,9 @@
         /* ----------------------------------------------------------- */
 
         var cr = $("#quote-carousel");
-        cr.on("touchstart", function(event) {
+        cr.on("touchstart", function (event) {
             var xClick = event.originalEvent.touches[0].pageX;
-            $(this).one("touchmove", function(event) {
+            $(this).one("touchmove", function (event) {
                 var xMove = event.originalEvent.touches[0].pageX;
                 if (Math.floor(xClick - xMove) > 5) {
                     cr.carousel('next');
@@ -242,7 +242,7 @@
                     cr.carousel('prev');
                 }
             });
-            cr.on("touchend", function() {
+            cr.on("touchend", function () {
                 $(this).off("touchmove");
             });
         });
@@ -252,7 +252,7 @@
         /* ----------------------------------------------------------- */
 
         var btn_hover = "";
-        $(".custom-button").each(function() {
+        $(".custom-button").each(function () {
             var btn_text = $(this).text();
             $(this).addClass(btn_hover).empty().append("<span data-hover='" + btn_text + "'>" + btn_text + "</span>");
         });
@@ -261,13 +261,13 @@
         /*  LOCAL SCROLL
         /* ----------------------------------------------------------- */
 
-        $(".scroll-to-target[href^='#']").on("click", function(scroll_to_target) {
+        $(".scroll-to-target[href^='#']").on("click", function (scroll_to_target) {
             scroll_to_target.preventDefault();
             var a = this.hash,
                 i = $(a);
             $("html, body").stop().animate({
                 scrollTop: i.offset().top
-            }, 900, "swing", function() {})
+            }, 900, "swing", function () { })
         })
 
         /* ----------------------------------------------------------- */
@@ -276,10 +276,10 @@
 
         if ($(window).width() > 992) {
             $("#main-navigation").on({
-                mouseenter: function() {
+                mouseenter: function () {
                     $(this).addClass("open");
                 },
-                mouseleave: function() {
+                mouseleave: function () {
                     $(this).removeClass("open");
                 }
             }, 'li.dropdown');
@@ -297,7 +297,7 @@
         /*  HAMBURGER ICON ANIMATION
         /* ----------------------------------------------------------- */
 
-        $("#icon-toggler").on("click", function() {
+        $("#icon-toggler").on("click", function () {
             $(this).toggleClass("open");
         });
 
@@ -306,20 +306,20 @@
         /* ----------------------------------------------------------- */
 
         checkScrolling($(".pricing-body"));
-        $(window).on("resize", function() {
-            window.requestAnimationFrame(function() {
+        $(window).on("resize", function () {
+            window.requestAnimationFrame(function () {
                 checkScrolling($(".pricing-body"))
             });
         });
-        $(".pricing-body").on("scroll", function() {
+        $(".pricing-body").on("scroll", function () {
             var selected = $(this);
-            window.requestAnimationFrame(function() {
+            window.requestAnimationFrame(function () {
                 checkScrolling(selected)
             });
         });
 
         function checkScrolling(tables) {
-            tables.each(function() {
+            tables.each(function () {
                 var table = $(this),
                     totalTableWidth = parseInt(table.children(".pricing-features").width(), 10),
                     tableViewport = parseInt(table.width(), 10);
@@ -334,20 +334,20 @@
         bouncy_filter($(".pricing-container"));
 
         function bouncy_filter(container) {
-            container.each(function() {
+            container.each(function () {
                 var pricing_table = $(this);
                 var filter_list_container = pricing_table.children(".pricing-switcher"),
                     filter_radios = filter_list_container.find("input[type='radio']"),
                     pricing_table_wrapper = pricing_table.find(".pricing-wrapper");
 
                 var table_elements = {};
-                filter_radios.each(function() {
+                filter_radios.each(function () {
                     var filter_type = $(this).val();
                     table_elements[filter_type] = pricing_table_wrapper.find("li[data-type='" + filter_type + "']");
                 });
 
                 //detect input change event
-                filter_radios.on("change", function(event) {
+                filter_radios.on("change", function (event) {
                     event.preventDefault();
                     //detect which radio input item was checked
                     var selected_filter = $(event.target).val();
@@ -362,7 +362,7 @@
                         hide_not_selected_items(table_elements, selected_filter);
                         pricing_table_wrapper.removeClass("is-switched");
                     } else {
-                        pricing_table_wrapper.addClass("is-switched").eq(0).one("webkitAnimationEnd oanimationend msAnimationEnd animationend", function() {
+                        pricing_table_wrapper.addClass("is-switched").eq(0).one("webkitAnimationEnd oanimationend msAnimationEnd animationend", function () {
                             hide_not_selected_items(table_elements, selected_filter);
                             pricing_table_wrapper.removeClass("is-switched");
                             //change rotation direction if .pricing-list has the .bounce-invert class
@@ -378,7 +378,7 @@
         }
 
         function hide_not_selected_items(table_containers, filter) {
-            $.each(table_containers, function(key, value) {
+            $.each(table_containers, function (key, value) {
                 if (key != filter) {
                     $(this).removeClass("is-visible is-selected").addClass("is-hidden");
 
@@ -392,11 +392,11 @@
         /*  SITE SEARCH
         /* ----------------------------------------------------------- */
 
-        $(".navbar-nav .fa-search").on("click", function() {
+        $(".navbar-nav .fa-search").on("click", function () {
             $(".site-search .search-container").toggleClass("open");
         })
 
-        $(".site-search .close").on("click", function() {
+        $(".site-search .close").on("click", function () {
             $(".site-search .search-container").removeClass("open");;
         })
 
@@ -404,7 +404,7 @@
         /*  AJAX CONTACT FORM
         /* ----------------------------------------------------------- */
 
-        $(".formcontact").on("submit", function() {
+        $(".formcontact").on("submit", function () {
             $(".output_message").text("Loading...");
 
             var form = $(this);
@@ -412,7 +412,7 @@
                 url: form.attr("action"),
                 method: form.attr("method"),
                 data: form.serialize(),
-                success: function(result) {
+                success: function (result) {
                     if (result == "success") {
                         $(".formcontact").find(".output_message_holder").css("display", "block");
                         $(".formcontact").find(".output_message").addClass("success");
@@ -434,7 +434,7 @@
 
         var fieldName;
         // This button will increment the value
-        $(".qtyplus").on("click", function(e) {
+        $(".qtyplus").on("click", function (e) {
             // Stop acting like a button
             e.preventDefault();
             // Get the field name
@@ -451,7 +451,7 @@
             }
         });
         // This button will decrement the value till 0
-        $(".qtyminus").on("click", function(e) {
+        $(".qtyminus").on("click", function (e) {
             // Stop acting like a button
             e.preventDefault();
             // Get the field name
@@ -474,7 +474,7 @@
         /*  REFRESH 503 PAGE
         /* ----------------------------------------------------------- */
 
-        $("#refresh").on("click", function() {
+        $("#refresh").on("click", function () {
             location.reload();
         });
 
@@ -482,7 +482,7 @@
         /*  SEARCH FIELD FOCUS
         /* ----------------------------------------------------------- */
 
-        $("#search-button").on("click", function() {
+        $("#search-button").on("click", function () {
             $("#search-input").focus();
         });
 
@@ -502,7 +502,7 @@
         var rev_product;
         var rev_slider_product = $('#rev_slider_product');
         if (rev_slider_product.length > 0) {
-            tpj(document).ready(function() {
+            tpj(document).ready(function () {
                 if (tpj("#rev_slider_product").revolution == undefined) {
                     revslider_showDoubleJqueryError("#rev_slider_product");
                 } else {
@@ -547,7 +547,7 @@
         var rev_kenburns;
         var rev_slider_kenburns = $('#rev_slider_kenburns');
         if (rev_slider_kenburns.length > 0) {
-            tpj(document).ready(function() {
+            tpj(document).ready(function () {
                 if (tpj("#rev_slider_kenburns").revolution == undefined) {
                     revslider_showDoubleJqueryError("#rev_slider_kenburns");
                 } else {
@@ -650,7 +650,7 @@
         var rev_rotating_words;
         var rev_slider_rotating_words = $('#rev_slider_rotating_words');
         if (rev_slider_rotating_words.length > 0) {
-            tpj(document).ready(function() {
+            tpj(document).ready(function () {
                 if (tpj("#rev_slider_rotating_words").revolution == undefined) {
                     revslider_showDoubleJqueryError("#rev_slider_rotating_words");
                 } else {
@@ -697,7 +697,7 @@
         var rev_creative_frontpage;
         var rev_slider_creative_frontpage = $('#rev_slider_creative_frontpage');
         if (rev_slider_creative_frontpage.length > 0) {
-            tpj(document).ready(function() {
+            tpj(document).ready(function () {
                 if (tpj("#rev_slider_creative_frontpage").revolution == undefined) {
                     revslider_showDoubleJqueryError("#rev_slider_creative_frontpage");
                 } else {
@@ -771,7 +771,7 @@
         var rev_content_tabs;
         var rev_slider_content_tabs = $('#rev_slider_content_tabs');
         if (rev_slider_content_tabs.length > 0) {
-            tpj(document).ready(function() {
+            tpj(document).ready(function () {
                 if (tpj("#rev_slider_content_tabs").revolution == undefined) {
                     revslider_showDoubleJqueryError("#rev_slider_content_tabs");
                 } else {
@@ -839,7 +839,7 @@
         var rev_carousel_classic;
         var rev_slider_carousel_classic = $('#rev_slider_carousel_classic');
         if (rev_slider_carousel_classic.length > 0) {
-            tpj(document).ready(function() {
+            tpj(document).ready(function () {
                 if (tpj("#rev_slider_carousel_classic").revolution == undefined) {
                     revslider_showDoubleJqueryError("#rev_slider_carousel_classic");
                 } else {
@@ -943,7 +943,7 @@
         var rev_vimeo;
         var rev_slider_vimeo = $('#rev_slider_vimeo');
         if (rev_slider_vimeo.length > 0) {
-            tpj(document).ready(function() {
+            tpj(document).ready(function () {
                 if (tpj("#rev_slider_vimeo").revolution == undefined) {
                     revslider_showDoubleJqueryError("#rev_slider_vimeo");
                 } else {
@@ -995,7 +995,7 @@
         var rev_video_slider;
         var rev_slider_video_slider = $('#rev_slider_video_slider');
         if (rev_slider_video_slider.length > 0) {
-            tpj(document).ready(function() {
+            tpj(document).ready(function () {
                 if (tpj("#rev_slider_video_slider").revolution == undefined) {
                     revslider_showDoubleJqueryError("#rev_slider_video_slider");
                 } else {
@@ -1097,7 +1097,7 @@
         var rev_travel;
         var rev_slider_travel = $('#rev_slider_travel');
         if (rev_slider_travel.length > 0) {
-            tpj(document).ready(function() {
+            tpj(document).ready(function () {
                 if (tpj("#rev_slider_travel").revolution == undefined) {
                     revslider_showDoubleJqueryError("#rev_slider_travel");
                 } else {
@@ -1177,7 +1177,7 @@
         var rev_static;
         var rev_slider_static = $('#rev_slider_static');
         if (rev_slider_static.length > 0) {
-            tpj(document).ready(function() {
+            tpj(document).ready(function () {
                 if (tpj("#rev_slider_static").revolution == undefined) {
                     revslider_showDoubleJqueryError("#rev_slider_static");
                 } else {
@@ -1273,13 +1273,13 @@
                 }
             });
         }
-		
+
         // INDEX-SLIDESHOW
 
         var rev_slideshow;
         var rev_slider_slideshow = $('#rev_slider_slideshow');
         if (rev_slider_slideshow.length > 0) {
-            tpj(document).ready(function() {
+            tpj(document).ready(function () {
                 if (tpj("#rev_slider_slideshow").revolution == undefined) {
                     revslider_showDoubleJqueryError("#rev_slider_slideshow");
                 } else {
@@ -1376,13 +1376,13 @@
                 }
             });
         }
-		
+
         // INDEX-SCROLL-EFFECTS
 
         var rev_scroll_effects;
         var rev_slider_scroll_effects = $('#rev_slider_scroll_effects');
         if (rev_slider_scroll_effects.length > 0) {
-            tpj(document).ready(function() {
+            tpj(document).ready(function () {
                 if (tpj("#rev_slider_scroll_effects").revolution == undefined) {
                     revslider_showDoubleJqueryError("#rev_slider_scroll_effects");
                 } else {
@@ -1453,7 +1453,7 @@
                     var newCall = new Object(),
                         cslide;
 
-                    newCall.callback = function() {
+                    newCall.callback = function () {
                         var proc = rev_scroll_effects.revgetparallaxproc(),
                             fade = 1 + proc,
                             scale = 1 + (Math.abs(proc) / 10);
@@ -1466,55 +1466,55 @@
                     newCall.inmodule = "parallax";
                     newCall.atposition = "start";
 
-                    rev_scroll_effects.bind("revolution.slide.onloaded", function(e) {
+                    rev_scroll_effects.bind("revolution.slide.onloaded", function (e) {
                         rev_scroll_effects.revaddcallback(newCall);
                     });
                 }
             });
         }
-		
-		/* ----------------------------------------------------------- */
+
+        /* ----------------------------------------------------------- */
         /*  GOOGLE MAP
         /* ----------------------------------------------------------- */
-		
-		function init_map() {
-			
-			var myOptions = {
-				scrollwheel: false,
-				zoom: 12,
-				center: new google.maps.LatLng(40.7127837, -74.00594130000002),
-				mapTypeId: google.maps.MapTypeId.ROADMAP
-			};
-			var map = new google.maps.Map(document.getElementById("gmap_canvas"), myOptions);
-			var marker = new google.maps.Marker({
-				map: map,
-				icon: "img/markers/yellow.png",
-				position: new google.maps.LatLng(40.7127837, -74.00594130000002)
-			});
-			var infowindow = new google.maps.InfoWindow({
-				content: "<div class='map-info-window'><strong class='text-uppercase'>Amira</strong>1234 Disney Street, New York City<br></div>"
-			});
-			google.maps.event.addListener(marker, "click", function() {
-				infowindow.open(map, marker);
-			});
-		}
-		var gm = $('#gmap_canvas');
+
+        function init_map() {
+
+            var myOptions = {
+                scrollwheel: false,
+                zoom: 12,
+                center: new google.maps.LatLng(40.7127837, -74.00594130000002),
+                mapTypeId: google.maps.MapTypeId.ROADMAP
+            };
+            var map = new google.maps.Map(document.getElementById("gmap_canvas"), myOptions);
+            var marker = new google.maps.Marker({
+                map: map,
+                icon: "img/markers/yellow.png",
+                position: new google.maps.LatLng(40.7127837, -74.00594130000002)
+            });
+            var infowindow = new google.maps.InfoWindow({
+                content: "<div class='map-info-window'><strong class='text-uppercase'>Amira</strong>1234 Disney Street, New York City<br></div>"
+            });
+            google.maps.event.addListener(marker, "click", function () {
+                infowindow.open(map, marker);
+            });
+        }
+        var gm = $('#gmap_canvas');
         if (gm.length > 0) {
-			google.maps.event.addDomListener(window, "load", init_map);
-		}
-		
-		/* ----------------------------------------------------------- */
+            google.maps.event.addDomListener(window, "load", init_map);
+        }
+
+        /* ----------------------------------------------------------- */
         /*  COMING SOON COUNTDOWN
         /* ----------------------------------------------------------- */
-		
-		var comingsoon = $("#countdown");
+
+        var comingsoon = $("#countdown");
         if (comingsoon.length) {
-			$('#countdown').countdown({until: new Date(2019, 6-1, 9)}); 
-		}
-		
+            $('#countdown').countdown({ until: new Date(2019, 6 - 1, 9) });
+        }
+
     });
 
-    $(window).on("scroll", function() {
+    $(window).on("scroll", function () {
 
         /* ----------------------------------------------------------- */
         /*  FIX HEADER ON SCROLL
