@@ -32,35 +32,34 @@
       <h2><span>Find</span> Your Opportunity Here</h2>
     </div>
     <!-- Main Heading Starts -->
-    <form>
-      <div class="card__top-line">
-        <!-- <label class="card__label-search"> -->
-        <input class="card__input-search" type="text" placeholder="Search by keyword">
-        <!-- </label> -->
+      <form>
+        <div class="card__top-line">
+          <div class="form_control">
+            <input class="card__input-search" type="text" placeholder="Search by keyword">
+          </div>
 
-        <!-- <div class="catalog__filter-btn"> -->
-        <select class="filter-city select-item">
-          <option>Select Cities</option>
-          <option>City_1</option>
-          <option>City_2</option>
-        </select>
-        <select class="filter-Specialization select-item">
-          <option>All Specialization</option>
-          <option>Java</option>
-          <option>React</option>
-        </select>
+          <div class="form_control">
+            <select class="filter-city select-item">
+              <option>Select Cities</option>
+              <option>City_1</option>
+              <option>City_2</option>
+            </select>
+          </div>
 
-        <!-- </div> -->
-        <!-- <label class="card__label-pickup">
-          <input class="filter-style" type="radio" name="pickup">
-          Select Cities
-        </label>
-        <label class="card__label-pickup">
-          <input class="filter-style" type="radio" name="pickup" checked>
-          All Specialization
-        </label> -->
-        <button type="submit">SEARCH</button>
-      </div>
+          <div class="form_control">
+            <select class="filter-Specialization select-item">
+              <option>All Specialization</option>
+              <option>Java</option>
+              <option>React</option>
+            </select>
+          </div>
+
+          <div class="form_control">
+            <button type="submit">SEARCH</button>
+          </div>
+        </div>
+      </form>
+
       <ul class="card__list">
         <li class="card__list-item card__list-itemtitle">
           <div class="card__list-specialization">Specialization</div>
@@ -121,8 +120,6 @@
       <div class="find-here-more">
         <button type="submit">MORE OPPORTUNITIES</button>
       </div>
-
-    </form>
   </div>
 </section>
 <!-- Find-here Section Ends -->
@@ -136,13 +133,6 @@
       <h2><span>SToFU</span> BENEFITS</h2>
     </div>
     <!-- Main Heading Starts -->
-    <!-- Divider Starts -->
-    <!-- <div class="divider text-center">
-      <span class="outer-line"></span>
-      <span class="fa fa-cogs" aria-hidden="true"></span>
-      <span class="outer-line"></span>
-    </div> -->
-    <!-- Divider Ends -->
     <!-- Services Starts -->
     <div class="row services-box">
       <!-- Service Item Starts -->
@@ -239,67 +229,57 @@
 </section>
 <!-- Services Section Ends -->
 
-
-
-
 <!-- Project Starts -->
-<section class="project">
-  <div class="container">
-    <div class="text-center top-text">
-      <h2>LIFE AT <span>SToFU</span></h2>
-    </div>
-    <div class="row">
-      <!-- Project Main Content Starts -->
-      <div class="col-md-6">
-        <div class="project-main-content">
-          <!-- Gallery Item Starts -->
-          <div class="slider-inner">
-            <div><img src="http://via.placeholder.com/700x470" alt="Slider Project"></div>
-            <div><img src="http://via.placeholder.com/700x470" alt="Slider Project"></div>
-            <div><img src="http://via.placeholder.com/700x470" alt="Slider Project"></div>
-            <div><img src="http://via.placeholder.com/700x470" alt="Slider Project"></div>
-          </div>
-          <!-- Gallery Item Starts -->
-        </div>
-        <div class="project-navigation">
-          <nav>
-            <ul class="unstyled">
-              <!-- <li><a href="image-project.html"><i class="fa fa-angle-double-left"></i> Previous Project</a></li>
-              <li class="pull-right"><a href="gallery-project.html">Next Project <i
-                    class="fa fa-angle-double-right"></i></a></li> -->
-            </ul>
-          </nav>
-        </div>
-      </div>
-      <!-- Project Main Content Ends -->
-    </div>
+<section class="life-at-stofu">
+  <div class="text-center top-text">
+    <h2>LIFE AT <span>SToFU</span></h2>
   </div>
+  <div class="container">
+    <div class="row">
+        <div class="col-md-12">
+            <div id="carousel-example-generic" class="carousel slide" data-ride="carousel">
+                <ol class="carousel-indicators">
+                    <li data-target="#carousel-example-generic" data-slide-to="0" class="active"></li>
+                    <li data-target="#carousel-example-generic" data-slide-to="1"></li>
+                    <li data-target="#carousel-example-generic" data-slide-to="2"></li>
+                </ol>
+                <div class="carousel-inner">
+                    <div class="item active">
+                        <img src="http://placehold.it/1200x500/3498db/2980b9" alt="First slide">
+                        <div class="carousel-caption">
+                            <h3>
+                                First slide</h3>
+                            <p>
+                                Nulla vitae elit libero, a pharetra augue mollis interdum.</p>
+                        </div>
+                    </div>
+                    <div class="item">
+                        <img src="http://placehold.it/1200x500/9b59b6/8e44ad" alt="Second slide">
+                        <div class="carousel-caption">
+                            <h3>
+                                Second slide</h3>
+                            <p>
+                                Nulla vitae elit libero, a pharetra augue mollis interdum.</p>
+                        </div>
+                    </div>
+                    <div class="item">
+                        <img src="http://placehold.it/1200x500/34495e/2c3e50" alt="Third slide">
+                        <div class="carousel-caption">
+                            <h3>
+                                Third slide</h3>
+                            <p>
+                                Nulla vitae elit libero, a pharetra augue mollis interdum.</p>
+                        </div>
+                    </div>
+                </div>
+                <a class="left carousel-control" href="#carousel-example-generic" data-slide="prev">
+                    <span class="glyphicon glyphicon-chevron-left"></span></a><a class="right carousel-control"
+                        href="#carousel-example-generic" data-slide="next"><span class="glyphicon glyphicon-chevron-right">
+                        </span></a>
+            </div>
+        </div>
+    </div>
 </section>
 <!-- Project Ends -->
 
-<!-- Project Starts -->
-<!-- <section class="project">
-  <div class="container">
-    <div class="banner-section__slaider">
-      <a class="banner-section__slaider-item" href="#">
-        <img class="banner-section__slaider-img" src="http://via.placeholder.com/700x470" alt="">
-      </a>
-      <a class="banner-section__slaider-item" href="#">
-        <img class="banner-section__slaider-img" src="http://via.placeholder.com/700x470" alt="">
-      </a>
-      <a class="banner-section__slaider-item" href="#">
-        <img class="banner-section__slaider-img" src="http://via.placeholder.com/700x470" alt="">
-      </a>
-      <a class="banner-section__slaider-item" href="#">
-        <img class="banner-section__slaider-img" src="http://via.placeholder.com/700x470" alt="">
-      </a>
-      <a class="banner-section__slaider-item" href="#">
-        <img class="banner-section__slaider-img" src="http://via.placeholder.com/700x470" alt="">
-      </a>
-      <a class="banner-section__slaider-item" href="#">
-        <img class="banner-section__slaider-img" src="http://via.placeholder.com/700x470" alt="">
-      </a>
-    </div>
-  </div>
-</section> -->
 {% endblock %}

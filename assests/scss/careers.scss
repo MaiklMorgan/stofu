@@ -23,6 +23,10 @@
   margin-bottom: 60px;
 }
 
+.card__list{
+  padding-left: 0;
+}
+
 .card__tabs{
   margin-bottom: 100px;
 }
@@ -49,54 +53,51 @@
 }
 
 .card__top-line{
+  display: flex;
+  flex-direction: row; 
   margin-bottom: 10px;
   font-size: 18px;
   line-height: 22px;
   color: #000000;
-  // color: rgba(255, 255, 255, 0.7); 
+  div{
+    width: 100%;
+    &:last-child{
+      text-align: right;
+    }
+  }
 }
-
-// .card__label-search{
-//   font-size: 17px;
-//   line-height: 20px;
-//   color: rgba(255, 255, 255, 0.7);
-// }
+@media only screen and (max-width: 480px) {
+  .card__top-line{
+    display: flex;
+    flex-direction: column; 
+    div{
+      margin-bottom: 18px;
+      &:last-child{
+        text-align: left;
+      }
+    }
+  } 
+}
 
 input.card__input-search{
   width: 250px;
   height: 33px;
-  left: 495px;
-  top: 1066px;
   background: #F0F0F4;
   border: 2px solid #72b626;
   border-radius: 2px;
-  margin-left: 17px;
   padding: 9px 37px 9px 17px;
-  margin-right: 35px;
-  // color: rgba(114,182,38, 1);
 }
 
 .select-item {
   width: 250px;
   height: 33px;
-  margin-left: 54px;
   font-size: 17px;
   line-height: 20px;
   color: #242424;
   background: #F0F0F4;
   border: 2px solid #72b626;
   border-radius: 2px;
-  // color: rgba(114,182,38, 0.7);
-  // color: rgba(255, 255, 255, 0.7);
 }
-
-// .card__label-pickup{
-//   margin-left: 54px;
-//   font-size: 17px;
-//   line-height: 20px;
-//   color: rgba(255, 255, 255, 0.7);
-// }
-
 .card__list-item{
   padding: 20px 0;
   border-bottom: 1px solid rgba(255, 255, 255, 0.1);
@@ -121,11 +122,6 @@ input.card__input-search{
   width: 220px;
   margin-right: 96px;
 }
-
-// .workhours{
-//   display: flex;
-//   justify-content: space-between;
-// }
 
 .card__list-location{
   width: 100px;
@@ -156,7 +152,6 @@ input.card__input-search{
 }
 
 .card__top-line button{
-  margin-left: 80px;
   padding: 9px 50px;
 }
 
@@ -213,4 +208,52 @@ input.card__input-search{
 .banner-section__slaider-img{
   object-fit: cover;
   min-height: 400px;
+}
+
+@media only screen and (max-width: 480px) {
+  .card__list-specialization,
+  .card__list-location,
+  .card__list-send,
+  .card__list-btn,
+  .card__list-title{
+    margin-right: 12px !important;
+  }
+  .card__list-btn button{
+    padding: 8px 10px;
+    font-size: 12px;
+  }
+ }
+
+.life-at-stofu{
+  padding-bottom: 80px;
+  .main-text
+    {
+      position: absolute;
+      top: 50px;
+      width: 96.66666666666666%;
+      color: #FFF;
+    }
+    .btn-min-block
+    {
+      min-width: 170px;
+      line-height: 26px;
+    }
+    .btn-clear
+    {
+      color: #FFF;
+      background-color: transparent;
+      border-color: #FFF;
+      margin-right: 15px;
+    }
+    .btn-clear:hover
+    {
+      color: #000;
+      background-color: #FFF;
+    }
+}
+
+@media only screen and (max-width: 480px) {
+ .life-at-stofu{
+    margin-top: -50px;
+  } 
 }

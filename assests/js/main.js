@@ -1482,17 +1482,17 @@
             var myOptions = {
                 scrollwheel: false,
                 zoom: 12,
-                center: new google.maps.LatLng(40.7127837, -74.00594130000002),
+                center: new google.maps.LatLng(50.450496, 30.523528),
                 mapTypeId: google.maps.MapTypeId.ROADMAP
             };
             var map = new google.maps.Map(document.getElementById("gmap_canvas"), myOptions);
             var marker = new google.maps.Marker({
                 map: map,
                 icon: "img/markers/yellow.png",
-                position: new google.maps.LatLng(40.7127837, -74.00594130000002)
+                position: new google.maps.LatLng(50.450496, 30.523528)
             });
             var infowindow = new google.maps.InfoWindow({
-                content: "<div class='map-info-window'><strong class='text-uppercase'>Amira</strong>1234 Disney Street, New York City<br></div>"
+                content: "<div class='map-info-window'><strong class='text-uppercase'>Київ</strong>Майдан Незалежності<br></div>"
             });
             google.maps.event.addListener(marker, "click", function () {
                 infowindow.open(map, marker);

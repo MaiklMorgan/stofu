@@ -1801,7 +1801,7 @@ ul.nav li.dropdown ul.dropdown-menu li.active a {
   border: 0;
   box-shadow: none;
   z-index: 100;
-  min-width: 200px;
+  min-width: 40px;
   border-radius: 0;
   padding: 0;
 }
@@ -7049,6 +7049,15 @@ body.normal .portfolio .container   {
   .tp-mask-wrap .NotGeneric-SubTitle{
     font-size: 12px !important;
   } 
+}
+
+.logo-error-min{
+  max-width: 200px;
+}
+
+.max-90{
+  max-width: 90%;
+  margin: 0 auto;
 }
 
 @import "404";
