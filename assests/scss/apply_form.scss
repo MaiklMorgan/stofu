@@ -1,0 +1,23 @@
+.col-xs-12 .col-md-4{
+  width: 50%;
+}
+
+.checkbox label{
+  margin-bottom: 20px;
+}
+
+.col-xs-12.col-md-4.captcha{
+  width: 100%;
+  margin-top: 40px;  
+}
+
+.form-group.captcha-form {
+  display: flex;
+  justify-content: space-between;
+}
+
+.captcha-form input{
+  display: block;
+  width: 250px;
+  height: 50px;
+}
