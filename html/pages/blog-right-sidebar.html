@@ -1,6 +1,8 @@
 {% set title = 'blog-right-sidebar' %}
 {% extends '_layout.html' %}
 
+{% set activeBlogPage = 'active' %}
+
 {% block content %}
 <!-- Banner Starts -->
 <section class="banner">
@@ -14,7 +16,7 @@
       <hr>
       <!-- Breadcrumb Starts -->
       <ul class="breadcrumb">
-        <li><a href="index-kenburns.html"> home</a></li>
+        <li><a href="index.html"> home</a></li>
         <li>blog</li>
       </ul>
       <!-- Breadcrumb Ends -->
@@ -23,7 +25,7 @@
 </section>
 <!-- Banner Ends -->
 <!-- Section Content Starts -->
-<section class="blog">
+<section class="blog blog-bg">
   <div class="container">
     <div class="row">
       <div class="content col-xs-12 col-md-8">
@@ -35,7 +37,7 @@
           <!-- Figure Starts -->
           <figure>
             <a href="blog-post.html">
-              <img class="img-responsive" src="http://via.placeholder.com/750x365" alt="">
+              <img class="img-responsive" src="./img/backgrounds/bk/blog_post.jpg" alt="">
             </a>
           </figure>
           <!-- Figure Ends -->

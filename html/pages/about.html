@@ -1,6 +1,8 @@
 {% set title = 'about' %}
 {% extends '_layout.html' %}
 
+{% set activeAboutPage = 'active' %}
+
 {% block content %}
 
 <!-- Banner Starts -->
@@ -15,7 +17,7 @@
       <hr>
       <!-- Breadcrumb Starts -->
       <ul class="breadcrumb">
-        <li><a href="index-kenburns.html"> home</a></li>
+        <li><a href="index.html"> home</a></li>
         <li>About us</li>
       </ul>
       <!-- Breadcrumb Ends -->
@@ -60,12 +62,12 @@
           </div>
         </div>
         <!-- Tabs Content Ends -->
-        <a class="custom-button btn-left" href="portfolio.html">CONTACT US</a>
+        <a class="custom-button btn-left" href="contact.html">CONTACT US</a>
       </div>
       <!-- Image About Us Starts -->
       <div class="col-md-6 col-lg-6 about-right-side">
         <div>
-          <img class="img-responsive" src="http://via.placeholder.com/1024x681" alt="">
+          <img class="img-responsive" src="./img/projects/pic/FULLHD_aboutus_img.jpg" alt="">
         </div>
       </div>
       <!-- Image About Us Ends -->
@@ -77,115 +79,109 @@
 <!-- About Section Ends -->
 
 <!-- Services Section Starts -->
-<section class="services">
-  <!-- Container Starts -->
-  <div class="container">
-    <!-- Main Heading Starts -->
-    <div class="text-center top-text">
-      <h1><span>WHY </span> SToFU?</h1>
-      <h4>Here are just a few reasons why people choose Us</h4>
+<section class="services" id="services">
+    <!-- Container Starts -->
+    <div class="container">
+        <!-- Main Heading Starts -->
+        <div class="text-center top-text">
+            <h1><span>WHY </span> SToFU?</h1>
+            <h4>Here are just a few reasons why people choose Us</h4>
+        </div>
+        <!-- Main Heading Starts -->
+        <!-- Divider Starts -->
+        <div class="divider text-center">
+            <span class="outer-line"></span>
+            <span class="fa fa-cogs" aria-hidden="true"></span>
+            <span class="outer-line"></span>
+        </div>
+        <!-- Divider Ends -->
+        <!-- Services Starts -->
+        <div class="row services-box">
+            <!-- Service Item Starts -->
+            <div class="col-lg-4 col-md-6 col-sm-12 services-box-item">
+                <!-- Service Item Cover Starts -->
+                <span class="services-box-item-cover iconn-retention" data-headline="Software Engineering"></span>
+                <!-- Service Item Cover Ends -->
+                <!-- Service Item Content Starts -->
+                <div class="services-box-item-content iconn-retention">
+                    <h2>Software Engineering</h2>
+                    <p>We develop, customize, migrate and modernize custom apps for specific business needs such as data, workflows and infrastructure management, customer engagement, analytics, digital content, and omnichannel ecommerce.</p>
+                </div>
+                <!-- Service Item Content Ends -->
+            </div>
+            <!-- Service Item Ends -->
+
+            <!-- Service Item Starts -->
+            <div class="col-lg-4 col-md-6 col-sm-12 services-box-item">
+                <!-- Service Item Cover Starts -->
+                <span class="services-box-item-cover iconn-globe" data-headline="Researching and Reverse engineering"></span>
+                <!-- Service Item Cover Ends -->
+                <!-- Service Item Content Starts -->
+                <div class="services-box-item-content iconn-globe">
+                    <h2>Researching and Reverse engineering</h2>
+                    <p>We provide an opportunity to support the d  </p>
+                </div>
+                <!-- Service Item Content Ends -->
+            </div>
+            <!-- Service Item Ends -->
+
+            <!-- Service Item Starts -->
+            <div class="col-lg-4 col-md-6 col-sm-12 services-box-item">
+                <!-- Service Item Cover Starts -->
+                <span class="services-box-item-cover iconn-clients" data-headline="Cyber Security Services"></span>
+                <!-- Service Item Cover Ends -->
+                <!-- Service Item Content Starts -->
+                <div class="services-box-item-content iconn-clients">
+                    <h2>Cyber Security Services</h2>
+                    <p>We proactively identify threats to your digital infrastructure so you can minimise damage, reduce costs and financial losses, and prevent future attacks in an ever-evolving landscape. aaa aaa aaa </p>
+                </div>
+                <!-- Service Item Content Ends -->
+            </div>
+            <!-- Service Item Ends -->
+
+            <!-- Service Item Starts -->
+            <div class="col-lg-4 col-md-6 col-sm-12 services-box-item">
+                <!-- Service Item Cover Starts -->
+                <span class="services-box-item-cover iconn-proffessionals" data-headline="QA &amp; Testing"></span>
+                <!-- Service Item Cover Ends -->
+                <div class="services-box-item-content iconn-proffessionals">
+                    <h2>QA &amp; Testing</h2>
+                    <p>We provide both during- development and independent QA consulting and testing services. Our experts adhere to Test Early and Often approach, while applying test automation practices for human effort reduction. aaaa aaaa aaaa aaaa aaaa aaaa aaa </p>
+                </div>
+            </div>
+            <!-- Service Item Ends -->
+
+            <!-- Service Item Starts -->
+            <div class="col-lg-4 col-md-6 col-sm-12 services-box-item">
+                <!-- Service Item Cover Starts -->
+                <span class="services-box-item-cover iconn-experience" data-headline="DevSecOps"></span>
+                <!-- Service Item Cover Ends -->
+                <!-- Service Item Content Starts -->
+                <div class="services-box-item-content iconn-experience">
+                    <h2>DevSecOps</h2>
+                    <p>We cover a full range of services related to DevOps integration, Cloud Consulting &amp; System Administration, optimized software development lifecycle, continuous delivery, automated deployment, automation software release, backups, monitoring.</p>
+                </div>
+                <!-- Service Item Content Ends -->
+            </div>
+            <!-- Service Item Ends -->
+
+            <!-- Service Item Starts -->
+            <div class="col-lg-4 col-md-6 col-sm-12 services-box-item">
+                <!-- Service Item Cover Starts -->
+                <span class="services-box-item-cover iconn-support" data-headline="Maintenance &amp; Support"></span>
+                <!-- Service Item Cover Ends -->
+                <!-- Service Item Content Starts -->
+                <div class="services-box-item-content iconn-support">
+                    <h2>Maintenance &amp; Support</h2>
+                    <p>We offer 1st, 2nd and 3rd level support services for applications developed by our company. Our team will help you with troubles of any complexity level — from providing workarounds and hot fixes to security audit and application customization and enhancement.</p>
+                </div>
+                <!-- Service Item Content Ends -->
+            </div>
+            <!-- Service Item Ends -->
+
+        </div>
+        <!-- Services Ends -->
     </div>
-    <!-- Main Heading Starts -->
-    <!-- Divider Starts -->
-    <div class="divider text-center">
-      <span class="outer-line"></span>
-      <span class="fa fa-cogs" aria-hidden="true"></span>
-      <span class="outer-line"></span>
-    </div>
-    <!-- Divider Ends -->
-    <!-- Services Starts -->
-    <div class="row services-box">
-      <!-- Service Item Starts -->
-      <div class="col-lg-4 col-md-6 col-sm-12 services-box-item">
-        <!-- Service Item Cover Starts -->
-        <span class="services-box-item-cover fa fa-leaf" data-headline="98.9% Client Retention Rate"></span>
-        <!-- Service Item Cover Ends -->
-        <!-- Service Item Content Starts -->
-        <div class="services-box-item-content fa fa-leaf">
-          <h2>98.9% Client Retention Rate</h2>
-          <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et
-            dolore magna aliqua. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu.</p>
-        </div>
-        <!-- Service Item Content Ends -->
-      </div>
-      <!-- Service Item Ends -->
-
-      <!-- Service Item Starts -->
-      <div class="col-lg-4 col-md-6 col-sm-12 services-box-item">
-        <!-- Service Item Cover Starts -->
-        <span class="services-box-item-cover fa fa-anchor" data-headline="Strategic Locations Around The Globe"></span>
-        <!-- Service Item Cover Ends -->
-        <!-- Service Item Content Starts -->
-        <div class="services-box-item-content fa fa-anchor">
-          <h2>Strategic Locations Around The Globe</h2>
-          <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et
-            dolore magna aliqua. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu.</p>
-        </div>
-        <!-- Service Item Content Ends -->
-      </div>
-      <!-- Service Item Ends -->
-
-      <!-- Service Item Starts -->
-      <div class="col-lg-4 col-md-6 col-sm-12 services-box-item">
-        <!-- Service Item Cover Starts -->
-        <span class="services-box-item-cover fa fa-comments-o" data-headline="1100+ Clients Served"></span>
-        <!-- Service Item Cover Ends -->
-        <!-- Service Item Content Starts -->
-        <div class="services-box-item-content fa fa-comments-o">
-          <h2>1100+ Clients Served</h2>
-          <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et
-            dolore magna aliqua. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu.</p>
-        </div>
-        <!-- Service Item Content Ends -->
-      </div>
-      <!-- Service Item Ends -->
-
-      <!-- Service Item Starts -->
-      <div class="col-lg-4 col-md-6 col-sm-12 services-box-item">
-        <!-- Service Item Cover Starts -->
-        <span class="services-box-item-cover fa fa-support" data-headline="Highly qualified professionals"></span>
-        <!-- Service Item Cover Ends -->
-        <div class="services-box-item-content fa fa-support">
-          <h2>Highly qualified professionals</h2>
-          <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et
-            dolore magna aliqua. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu.</p>
-        </div>
-      </div>
-      <!-- Service Item Ends -->
-
-      <!-- Service Item Starts -->
-      <div class="col-lg-4 col-md-6 col-sm-12 services-box-item">
-        <!-- Service Item Cover Starts -->
-        <span class="services-box-item-cover fa fa-cogs" data-headline="10+ Years Of Experience"></span>
-        <!-- Service Item Cover Ends -->
-        <!-- Service Item Content Starts -->
-        <div class="services-box-item-content fa fa-cogs">
-          <h2>10+ Years Of Experience</h2>
-          <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et
-            dolore magna aliqua. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu.</p>
-        </div>
-        <!-- Service Item Content Ends -->
-      </div>
-      <!-- Service Item Ends -->
-
-      <!-- Service Item Starts -->
-      <div class="col-lg-4 col-md-6 col-sm-12 services-box-item">
-        <!-- Service Item Cover Starts -->
-        <span class="services-box-item-cover fa fa-file-pdf-o" data-headline="Full continuous support"></span>
-        <!-- Service Item Cover Ends -->
-        <!-- Service Item Content Starts -->
-        <div class="services-box-item-content fa fa-file-pdf-o">
-          <h2>Full continuous support</h2>
-          <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et
-            dolore magna aliqua. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu.</p>
-        </div>
-        <!-- Service Item Content Ends -->
-      </div>
-      <!-- Service Item Ends -->
-
-    </div>
-    <!-- Services Ends -->
-  </div>
 </section>
 <!-- Services Section Ends -->
 
@@ -265,13 +261,12 @@
   <div class="container">
     <ul class="bxslider" id="bxslider">
       <!-- Logos Items Starts -->
-      <li><img src="http://via.placeholder.com/150x29" alt="3docean"></li>
-      <li><img src="http://via.placeholder.com/150x29" alt="activeden"></li>
-      <li><img src="http://via.placeholder.com/150x29" alt="audiojungle"></li>
-      <li><img src="http://via.placeholder.com/150x29" alt="codecanyon"></li>
-      <li><img src="http://via.placeholder.com/150x29" alt="graphicriver"></li>
-      <li><img src="http://via.placeholder.com/150x29" alt="photodune"></li>
-      <li><img src="http://via.placeholder.com/150x29" alt="themeforest"></li>
+      <li><img class="logos-img-slider" src="./img/projects/pic/brand_logo_1.jpg" alt="3docean"></li>
+      <li><img class="logos-img-slider" src="./img/projects/pic/brand_logo_2.jpg" alt="activeden"></li>
+      <li><img class="logos-img-slider" src="./img/projects/pic/brand_logo_3.jpg" alt="audiojungle"></li>
+      <li><img class="logos-img-slider" src="./img/projects/pic/brand_logo_4.jpg" alt="codecanyon"></li>
+      <li><img class="logos-img-slider" src="./img/projects/pic/brand_logo_5.jpg" alt="graphicriver"></li>
+      <li><img class="logos-img-slider" src="./img/projects/pic/brand_logo_6.jpg" alt="photodune"></li>
       <!-- Logos Items Ends -->
     </ul>
   </div>

@@ -7,6 +7,87 @@
 @import "layers";
 @import "navigation";
 
+@font-face {
+  font-family: 'icomoon';
+  src:  url('../fonts/icomoon.eot?d6h82y');
+  src:  url('../fonts/icomoon.eot?d6h82y#iefix') format('embedded-opentype'),
+    url('../fonts/icomoon.ttf?d6h82y') format('truetype'),
+    url('../fonts/icomoon.woff?d6h82y') format('woff'),
+  url('../fonts/icomoon.woff2?d6h82y') format('woff2'),
+    url('../fonts/icomoon.svg?d6h82y#icomoon') format('svg');
+  font-weight: normal;
+  font-style: normal;
+  font-display: block;
+}
+
+[class^="iconn-"], [class*=" iconn-"] {
+  /* use !important to prevent issues with browser extensions that change fonts */
+  font-family: 'icomoon' !important;
+  speak: never;
+  font-style: normal;
+  font-weight: normal;
+  font-variant: normal;
+  text-transform: none;
+  line-height: 1;
+
+  /* Better Font Rendering =========== */
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.iconn-friendly:before {
+  content: "\1f350";
+}
+.iconn-mentor:before {
+  content: "\1f351";
+}
+.iconn-money:before {
+  content: "\1f352";
+}
+.iconn-party:before {
+  content: "\1f353";
+}
+.iconn-projects:before {
+  content: "\1f354";
+}
+.iconn-training:before {
+  content: "\1f355";
+}
+.iconn-clients:before {
+  content: "\1f356";
+}
+.iconn-experience:before {
+  content: "\1f357";
+}
+.iconn-globe:before {
+  content: "\1f358";
+}
+.iconn-proffessionals:before {
+  content: "\1f359";
+}
+.iconn-retention:before {
+  content: "\1f35a";
+}
+.iconn-support:before {
+  content: "\1f35b";
+}
+.iconn-cyber-security:before {
+  content: "\1f35c";
+}
+.iconn-devops:before {
+  content: "\1f35d";
+}
+.iconn-qa:before {
+  content: "\1f35e";
+}
+.iconn-reverseng:before {
+  content: "\1f35f";
+}
+.iconn-softEngin:before {
+  content: "\1f360";
+}
+
+
 /*
 Template Name: Amira - Creative Multipurpose Template
 Author: Celtano
@@ -1562,7 +1643,7 @@ a:hover {
 
 .header-fixed .logo a {
   height: initial;
-  margin-top: 20px;
+  margin-top: 10px;
   transition: all 0.3s ease 0s;
   -o-transition: all 0.3s ease 0s;
   -moz-transition: all 0.3s ease 0s;
@@ -2234,7 +2315,7 @@ body.dark .header.header-fixed .logo a img.logo-dark {
 }
 
 .tp-simpleresponsive .slider-button:before {
-  content: "\f063";
+  content: "\f2bb";
   margin-top: -9px;
 }
 
@@ -2578,6 +2659,18 @@ body.dark .header.header-fixed .logo a img.logo-dark {
   backface-visibility: hidden;
 }
 
+@media only screen and (min-width: 960px) {
+  .services .services-box-item-cover {
+    min-height: 235px;
+  }
+}
+
+@media only screen and (min-width: 960px) {
+  .services .services-box-item-content {
+    min-height: 264px;
+  }
+}
+
 .services .services-box-item-cover {
   position: absolute;
   top: 0;
@@ -2597,8 +2690,8 @@ body.dark .header.header-fixed .logo a img.logo-dark {
 }
 
 .services .services-box-item-cover:before {
-  margin: -40px 0px 0px -20px;
-  font-size: 40px;
+  margin: -68px 0px 0px -28px;
+  font-size: 60px;
 }
 
 .services .services-box-item-cover:after {
@@ -2681,7 +2774,7 @@ body.dark .header.header-fixed .logo a img.logo-dark {
 ---------------------------------------- */
 
 .testimonials {
-  background: url("./../img/backgrounds/bk/home_heppy_customers.jpg");
+  background: url("./../img/backgrounds/bk/2xFULLHD_home_heppy_customers.jpg");
   background-attachment: fixed;
   background-position: center;
   background-repeat: no-repeat;
@@ -4777,7 +4870,7 @@ body.blog-page article .comments-form .custom-button:before {
 
 .contactform {
   color: #fff;
-  background: url("./../img/backgrounds/bk/send_email.jpg"); 
+  background: url("./../img/backgrounds/bk/2xFULLHD_send_email.jpg"); 
   background-attachment: fixed;
   background-position: center;
   background-repeat: no-repeat;
@@ -4898,14 +4991,14 @@ ul.bxslider img {
 /* Banner */
 
 .banner {
-  background-image: url('http://via.placeholder.com/1920x624');
+  background-image: url('./../img/backgrounds/bk/2xFULLHD_banner_top.jpg');
   background-repeat: no-repeat;
   background-position: center top;
   background-attachment: fixed;
 }
 
 .banner.banner-blog-post {
-  background-image: url('http://via.placeholder.com/1920x572');
+  background-image: url('./../img/backgrounds/bk/blog_post.jpg');
   background-size: initial;
 }
 
@@ -5205,8 +5298,7 @@ body.dark.blog-page .banner-blog-post .meta {
 
 body.error-page .error {
   height: 100vh;
-  background-image: url('http://via.placeholder.com/1920x1080');
-  // background-image: url(../../assests/img/backgrounds/Cybersecurity-groeiboek-2019-achtergrond.jpg);
+  background-image: url('./../img/backgrounds/bk/2xFULLHD_err_404_503.jpg');
   background-size: cover;
   background-position: center center;
   padding: 0;
@@ -5234,7 +5326,7 @@ body.error-page .error>div {
   height: 100vh;
   width: 100%;
   left: 0;
-  background: rgba(17, 17, 17, .9);
+  background: rgba(17, 17, 17, .7);
 }
 
 body.error-page .error>div>div {
@@ -7060,6 +7152,144 @@ body.normal .portfolio .container   {
   margin: 0 auto;
 }
 
+.link-card{
+  font-family: "Raleway", sans-serif;
+}
+.logos-img-slider{
+  max-width: 110px;
+}
+
+.mt-46{
+  margin-top: 46px;
+}
+
+.logos{
+  .bxslider img{
+    max-width: 75px;
+  }
+}
+
+.img-center{
+  margin: 0 auto;
+}
+
+#back-top span:before, .about ul.nav.nav-tabs li.active a, .banner .breadcrumb>li a:hover, .btn-wrapper a, .comments-list .comment-reply, .countdown-amount, .fact-badges h2 span, .facts-footer>div h5, .footer .bottom-footer p a, .footer .top-footer .menu ul li a:hover, .footer .top-footer h4, .info-map-boxes-item a, .info-map-boxes-item h1, .info-map-boxes-item:before, .latest-post .post-title a:hover, .navbar-nav .fa-search:hover, .payment .tooltip-text, .portfolio .caption a.title-link:hover h3, .project .project-navigation nav ul li a, .projectmanager h3, .projectmanager li a, .services .services-box-item-content h2, .services-box-item-content h2, .services-box-item-content:before, .services-box-item-cover:after, .services-box-item-cover:before, .shop-cart .secondary-button, .sidebar ul.nav.nav-tabs li a:hover, .social-icons ul li a:before, .testimonials #quote-carousel h5, .user-auth>div:nth-child(2) .form-container .form-group a, .videopromotion a i, .widget.recent-posts .entry-title a:hover, a, a.link:active, a.link:focus, a.link:hover, body.blog-page .meta span a, body.blog-page .meta span i, body.blog-page article h4:hover, body.dark .latest-post .post-title a:hover, body.dark .navbar-nav .fa-search:hover, body.dark .sidebar ul.nav.nav-tabs li a:hover, body.dark .widget.recent-posts .entry-title a:hover, body.dark ul.navbar-nav>li.active>a, body.dark ul.navbar-nav>li.open>a, body.dark ul.navbar-nav>li.open>a:active, body.dark ul.navbar-nav>li.open>a:focus, body.dark ul.navbar-nav>li.open>a:hover, body.dark ul.navbar-nav>li>a:hover, h1>span, h4.panel-title a, span.heart, ul.navbar-nav>li.active>a, ul.navbar-nav>li.open>a, ul.navbar-nav>li.open>a:active, ul.navbar-nav>li.open>a:focus, ul.navbar-nav>li.open>a:hover, ul.navbar-nav>li>a:active, ul.navbar-nav>li>a:focus, ul.navbar-nav>li>a:hover{
+  color: #72b626;
+}
+
+body.double-diagonal .services-benefits{
+  margin-top: 0;
+  padding-bottom: 0;
+  background: url('./../img/backgrounds/bk/2xFULLHD_benefits.jpg') center no-repeat fixed;
+  &:before,
+  &:after{
+    display: none;
+  }
+  .container{
+    padding-bottom: 0!important;
+  }
+}
+
+.life-at-stofu{
+  padding-top: 40px !important;
+  padding-bottom: 80px !important;
+}
+
+.block-inner-slider{
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  height: 100%;
+  justify-content: center;
+  align-items: center;
+  div{
+    z-index: 1;
+  }   
+}
+
+.tp-revslider-slidesli{
+  .block-inner-slider{
+    opacity: 0;
+    transition: all 0.6s;
+
+    .slider-title{
+      font-size: 70px;
+      line-height: 70px;
+      font-weight: 800;
+      color: #fff;
+      text-align: center;
+    }
+    .slider-description{
+      margin-top: 10px;
+      font-size: 14px;
+      line-height: 20px;
+      font-weight: 500;
+      letter-spacing: 4px;
+      color: #fff;
+      text-align: center;
+    }
+  }
+}
+
+.active-revslide{
+  .block-inner-slider{
+    opacity: 1;
+    transition: all 0.6s;
+    div{
+      z-index: 1;
+    }   
+  }
+}
+
+@media only screen and (max-width: 960px) {
+  .tp-revslider-slidesli{
+    .block-inner-slider{
+      .slider-title{
+        font-size: 34px;
+        line-height: 34px;
+      }
+      .slider-description{
+        margin-top: 10px;
+        font-size: 14px;
+        line-height: 20px;
+      }
+    }
+  }
+}
+
+@media only screen and (max-width: 480px) {
+  .tp-revslider-slidesli{
+    .block-inner-slider{
+      .slider-title{
+        font-size: 24px;
+        line-height: 70px;
+      }
+      .slider-description{
+        margin-top: 10px;
+        font-size: 14px;
+        line-height: 20px;
+      }
+    }
+  }
+}
+
+@media only screen and (max-width: 320px) {
+  .tp-revslider-slidesli{
+    .block-inner-slider{
+      .slider-title{
+        font-size: 16px;
+        line-height: 70px;
+      }
+      .slider-description{
+        margin-top: 10px;
+        font-size: 14px;
+        line-height: 20px;
+      }
+    }
+  }
+}
+
+
 @import "404";
 @import "503";
 @import "about";
@@ -7078,3 +7308,14 @@ body.normal .portfolio .container   {
 @import "find-opportunity";
 @import "some_position_1";
 @import "apply_form";
+
+.button-footer-submit{
+  margin-top: 10px;
+}
+
+#submit,
+#form-submit{
+  &:before {
+    content: "\f0e0";
+  }
+}

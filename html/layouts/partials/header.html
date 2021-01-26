@@ -5,7 +5,7 @@
 		<nav class="navbar">
 			<!-- Logo Starts -->
 			<div class="logo">
-				<a data-toggle="collapse" data-target=".navbar-collapse.show" class="navbar-brand" href="home.html">
+				<a data-toggle="collapse" data-target=".navbar-collapse.show" class="navbar-brand" href="index.html">
 					<!-- Logo White Starts -->
 					<img id="logo-light" class="logo-light" src="../img/projects/logo/SToFU.png" alt="logo-light" />
 					<!-- Logo White Ends -->
@@ -29,28 +29,60 @@
 			<div id="navbarSupportedContent" class="collapse navbar-collapse navbar-responsive-collapse">
 				<!-- Main Menu Starts -->
 				<ul class="nav navbar-nav" id="main-navigation">
-					<li class="active"><a href="home.html"> HOME</a></li>
-					<li><a href="about.html"> ABOUT US</a></li>
-					<li><a href="#"> PROJECTS</a></li>
-					<li class="dropdown">
-						<a href="#" class="dropdown-toggle" data-toggle="dropdown"> OUR SERVICES<i
-								class="fa fa-angle-down icon-angle"></i></a>
+					<li class="{{ activeAboutPage }}" ><a href="about.html">
+						<i class="fa fa-user"></i>
+						 ABOUT US
+						</a>
+					</li>
+					<li class="{{ activeProjectsPage }}">
+						<a href="projects.html">
+							<i class="fa fa-image"></i> 
+							PROJECTS
+						</a>
+					</li>
+					<li class="dropdown {{ activeServicesPage }}">
+						<a href="services.html" class="dropdown-toggle" > 
+							<i class="fa fa-th-large"></i>
+							OUR SERVICES
+							<i class="fa fa-angle-down icon-angle"></i>
+						</a>
 						<ul class="dropdown-menu" role="menu">
-							<li><a href="portfolio-2-columns.html">Solution 1</a></li>
-							<li><a href="portfolio-3-columns.html">Solution 2</a></li>
+							<li><a href="service_1.html">Software Engineering</a></li>
+							<li><a href="service_2.html">Researching and Reverse engineering</a></li>
+							<li><a href="service_3.html">Cyber Security Services</a></li>
+							<li><a href="service_4.html">QA & Testing</a></li>
+							<li><a href="service_5.html">DevSecOps</a></li>
+							<li><a href="service_6.html">Maintenance & Support</a></li>
 						</ul>
 					</li>
-					<li class="dropdown">
-						<a href="#" class="dropdown-toggle" data-toggle="dropdown"> BLOG<i
-								class="fa fa-angle-down icon-angle"></i></a>
+					<li class="dropdown {{ activeBlogPage }}">
+						<a href="blog-right-sidebar.html" class="dropdown-toggle"> 
+							<i class="fa fa-edit"></i>
+							BLOG
+							<i class="fa fa-angle-down icon-angle"></i>
+						</a>
 						<ul class="dropdown-menu" role="menu">
-							<li><a href="blog-right-sidebar.html">TAG_1</a></li>
-							<li><a href="blog-left-sidebar.html">TAG_2</a></li>
+							<li><a href="blog-post.html">TAG_1</a></li>
 						</ul>
 					</li>
-					<li><a href="#"> FORUM</a></li>
-					<li><a href="#"> CAREERS</a></li>
-					<li><a href="contact.html"> CONTACTS</a></li>
+					<li>
+						<a href="#"> 
+							<i class="fa fa-comment"></i>
+							FORUM
+						</a>
+					</li>
+					<li class="{{ activeCareersPage }}">
+						<a href="careers.html"> 
+							<i class="fa fa-briefcase"></i>
+							CAREERS
+						</a>
+					</li>
+					<li class="{{ activeContactPage }}">
+						<a href="contact.html"> 
+							<i class="fa fa-envelope"></i>
+							CONTACTS
+						</a>
+					</li>
 					<!-- Cart Icon Starts -->
 					<!-- <li class="cart hidden-xs hidden-sm"><a href="shopping-cart.html"><i class="fa fa-shopping-cart"></i></a></li> -->
 					<!-- Cart Icon Starts -->
@@ -60,12 +92,15 @@
 
 
 					<li class="dropdown languages-menu">
-						<a href="#" class="dropdown-toggle" data-toggle="dropdown"><i class="fa fa-edit"></i> ENG<i
-								class="fa fa-angle-down icon-angle"></i></a>
+						<a href="#" class="dropdown-toggle" data-toggle="dropdown"> 
+							ENG
+							<i class="fa fa-angle-down icon-angle"></i></a>
 						<ul class="dropdown-menu" role="menu">
 							<li><a href="#"> ENG</a></li>
 							<li><a href="#"> UKR</a></li>
 							<li><a href="#"> RUS</a></li>
+							<li><a href="#"> FR</a></li>
+							<li><a href="#"> CH</a></li>
 						</ul>
 					</li>
 				</ul>

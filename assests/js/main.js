@@ -1488,7 +1488,7 @@
             var map = new google.maps.Map(document.getElementById("gmap_canvas"), myOptions);
             var marker = new google.maps.Marker({
                 map: map,
-                icon: "img/markers/yellow.png",
+                icon: "img/markers/green.png",
                 position: new google.maps.LatLng(50.450496, 30.523528)
             });
             var infowindow = new google.maps.InfoWindow({
