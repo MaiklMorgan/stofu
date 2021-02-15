@@ -371,6 +371,7 @@ body.dark.blog-page .pagination li a:hover,
 body.dark .shop-cart table.order thead tr,
 body.dark .shop-cart .quantity,
 body.dark .custom-form input[type=text],
+body.dark .custom-form input[type=file],
 body.dark .custom-form input[type=email],
 body.dark .custom-form input[type=password],
 body.dark .custom-form textarea {
@@ -389,6 +390,7 @@ body.dark .shop-cart .table.cart-total .section-border {
 }
 
 body.dark .custom-form input[type=text],
+body.dark .custom-form input[type=file],
 body.dark .custom-form input[type=email],
 body.dark .custom-form input[type=password],
 body.dark .custom-form textarea {
@@ -398,6 +400,8 @@ body.dark .custom-form textarea {
 
 body.dark .custom-form input[type=text]:focus,
 body.dark .custom-form input[type=text]:active,
+body.dark .custom-form input[type=file]:focus,
+body.dark .custom-form input[type=file]:active,
 body.dark .custom-form input[type=email]:focus,
 body.dark .custom-form input[type=email]:active,
 body.dark .custom-form input[type=password]:focus,
@@ -6964,7 +6968,7 @@ body.normal .portfolio .container   {
     margin-top: 20px;
   }
   .services .services-box-item {
-    margin-top: 15px;
+    margin-top: 38px;
     padding: 0 15px;
   }
   .services .services-box-item-content {
@@ -7288,8 +7292,7 @@ body.double-diagonal .services-benefits{
     }
   }
 }
-
-
+ 
 @import "404";
 @import "503";
 @import "about";

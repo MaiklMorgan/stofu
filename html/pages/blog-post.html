@@ -71,96 +71,7 @@
           <!-- Meta Ends -->
           <!-- Comments Starts -->
           <div class="comments">
-            <h3 class="comments-heading uppercase">3 Comments</h3>
-            <ul class="comments-list">
-              <li>
-                <!-- Comment Starts -->
-                <div class="comment">
-                  <img class="comment-avatar pull-left" alt="" src="http://via.placeholder.com/100x100">
-                  <div class="comment-body">
-                    <div class="meta-data">
-                      <span class="comment-author">Lina Marzouki</span>
-                      <span class="comment-date pull-right second-font">January 17, 2017</span>
-                    </div>
-                    <p class="comment-content">
-                      Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut
-                      labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris
-                      nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehen.</p>
-                    <div>
-                      <a class="comment-reply" href="#">Reply</a>
-                    </div>
-                  </div>
-                </div>
-                <!-- Comment Ends -->
-                <ul class="comments-reply">
-                  <li>
-                    <!-- Comment Starts -->
-                    <div class="comment">
-                      <img class="comment-avatar pull-left" alt="" src="http://via.placeholder.com/100x100">
-                      <div class="comment-body">
-                        <div class="meta-data">
-                          <span class="comment-author">Rawia Chniti</span>
-                          <span class="comment-date pull-right">March 29, 2017</span>
-                        </div>
-                        <p class="comment-content">
-                          Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut
-                          labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco
-                          laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehen.</p>
-                        <div>
-                          <a class="comment-reply" href="#">Reply</a>
-                        </div>
-                      </div>
-                    </div>
-                    <!-- Comment Ends -->
-                  </li>
-                </ul>
-                <!-- Comment Starts -->
-                <div class="comment">
-                  <img class="comment-avatar pull-left" alt="" src="http://via.placeholder.com/100x100">
-                  <div class="comment-body">
-                    <div class="meta-data">
-                      <span class="comment-author">Slim Hamdi</span>
-                      <span class="comment-date pull-right">January 17, 2017</span>
-                    </div>
-                    <p class="comment-content">
-                      Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut
-                      labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris
-                      nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehen.</p>
-                    <div>
-                      <a class="comment-reply" href="#">Reply</a>
-                    </div>
-                  </div>
-                </div>
-                <!-- Comment Ends -->
-              </li>
-            </ul>
-            <h3 class="comments-heading add-comment">Add a comment</h3>
-            <!-- Comments Form Starts -->
-            <div class="custom-form comments-form">
-              <form>
-                <!-- Input Field Starts -->
-                <div class="form-group">
-                  <input class="form-control" name="name" id="name" placeholder="NAME" type="text" required>
-                </div>
-                <!-- Input Field Ends -->
-                <!-- Input Field Starts -->
-                <div class="form-group">
-                  <input class="form-control" name="email" id="email" placeholder="EMAIL" type="email" required>
-                </div>
-                <!-- Input Field Ends -->
-                <!-- Input Field Starts -->
-                <div class="form-group">
-                  <textarea class="form-control" id="comment" name="comment" placeholder="COMMENT" required></textarea>
-                </div>
-                <!-- Input Field Ends -->
-                <!-- Submit Form Button Starts -->
-                <div class="form-group">
-                  <button class="custom-button" type="submit">submit comment</button>
-                </div>
-                <!-- Submit Form Button Ends -->
-              </form>
-            </div>
-            <!-- Comments Form Ends -->
+            <div id="disqus_thread"></div>
           </div>
         </article>
         <!-- Article Ends -->
@@ -275,5 +186,25 @@
     </div>
   </div>
 </section>
+
+<script>
+    /**
+    *  RECOMMENDED CONFIGURATION VARIABLES: EDIT AND UNCOMMENT THE SECTION BELOW TO INSERT DYNAMIC VALUES FROM YOUR PLATFORM OR CMS.
+    *  LEARN WHY DEFINING THESE VARIABLES IS IMPORTANT: https://disqus.com/admin/universalcode/#configuration-variables    */
+    /*
+    var disqus_config = function () {
+    this.page.url = PAGE_URL;  // Replace PAGE_URL with your page's canonical URL variable
+    this.page.identifier = PAGE_IDENTIFIER; // Replace PAGE_IDENTIFIER with your page's unique identifier variable
+    };
+    */
+    (function() { // DON'T EDIT BELOW THIS LINE
+    var d = document, s = d.createElement('script');
+    s.src = 'https://stofu-io.disqus.com/embed.js';
+    s.setAttribute('data-timestamp', +new Date());
+    (d.head || d.body).appendChild(s);
+    })();
+</script>
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+<script id="dsq-count-scr" src="//stofu-io.disqus.com/count.js" async></script>
 <!-- Section Content Ends -->
 {% endblock %}

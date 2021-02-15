@@ -43,7 +43,10 @@
 
 
 
+.resume-btn .button,
 .resume-btn button {
+  display: block;
+  text-align: center;
   width: 250px;
   margin-right: 40px;
   margin-top: 40px;
@@ -58,6 +61,7 @@
   border: none;
 }
 
+.resume-btn .button:hover,
 .resume-btn button:hover {
   color: #72b626;
   font-weight: bold;

@@ -135,10 +135,12 @@ input.card__input-search{
 
 .card__list-btn{
   margin: 0 auto;
+  margin-top: 7px;
 }
 
 .find-here-more button,
 .card__top-line button,
+.card__list-btn .button,
 .card__list-btn button{
   font-size: 13px;
   line-height: 16px;
@@ -218,6 +220,7 @@ input.card__input-search{
   .card__list-title{
     margin-right: 12px !important;
   }
+  .card__list-btn .button,
   .card__list-btn button{
     padding: 8px 10px;
     font-size: 12px;
